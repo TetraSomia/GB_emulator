@@ -5,12 +5,13 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 12:55:18 2017 Arthur Josso
-** Last update Sun Mar  5 14:15:28 2017 Arthur Josso
+** Last update Sun Mar  5 19:19:02 2017 Arthur Josso
 */
 
 #pragma once
 
 #include <stdint.h>
+#include <stdbool.h>
 
 /*
 ** Register structure
@@ -45,9 +46,9 @@ typedef enum
     Z
   } t_flag_bit;
 
-#define SET_FLAG(r, f)		((r).flags |= 1 << f)
-#define GET_FLAG(r, f)		(((r).flags >> f) & 1)
-#define RESET_FLAG(r, f)	((r).flags &= ~(1 << f))
+#define SET_FLAG(f)    	(reg->flags |= 1 << f)
+#define GET_FLAG(f)    	((reg->flags >> f) & 1)
+#define RESET_FLAG(f)	(reg->flags &= ~(1 << f))
 
 /*
 ** Memory Map
@@ -79,3 +80,27 @@ typedef union
     uint8_t	IE_reg;
   };
 } t_memory;
+
+/*
+** Globals
+*/
+
+extern t_memory		*mem;
+extern t_registers	*reg;
+
+/*
+** Accessers
+*/
+
+uint8_t		get_byte(uint16_t addr);
+uint16_t	get_word(uint16_t addr);
+void		set_byte(uint16_t addr, uint8_t value);
+void		set_word(uint16_t addr, uint16_t value);
+
+/*
+** Misc functions
+*/
+
+void            init_memory();
+void		free_memory();
+bool            dump_file(const char *path);

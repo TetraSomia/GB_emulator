@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Sat Mar  4 13:34:31 2017 Arthur Josso
+## Last update Sun Mar  5 18:16:18 2017 Arthur Josso
 ##
 
 CC	=	gcc
@@ -18,7 +18,9 @@ CFLAGS	+=	-I$(INC) -Wall -W -Wextra
 
 LDFLAGS	+=
 
-SRC	=	./src/main.c
+SRC	=	./src/main.c \
+		./src/memory.c \
+		./src/misc.c
 
 OBJ	=	$(SRC:.c=.o)
 

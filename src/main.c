@@ -5,24 +5,25 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar  4 13:34:04 2017 Arthur Josso
-** Last update Sun Mar  5 13:39:25 2017 Arthur Josso
+** Last update Sun Mar  5 19:27:28 2017 Arthur Josso
 */
 
 #include <stdio.h>
 #include "memory.h"
 
-int	main()
+static int	usage(const char *binary)
 {
-  t_registers reg;
+  fprintf(stderr, "Usage: %s [rom]\n", binary);
+  return (1);
+}
 
-  reg.A = 1;
-  reg.F = 0;
-  reg.flags = 0;
-  printf("%x\n", reg.AF);
-  SET_FLAG(reg, NONE0);
-  SET_FLAG(reg, Z);
-  printf("%d %d\n", GET_FLAG(reg, Z), reg.flags);
-  RESET_FLAG(reg, Z);
-  printf("%d %d\n", GET_FLAG(reg, Z), reg.flags);
+int	main(int ac, char **av)
+{
+  if (ac != 2)
+    return (usage(av[0]));
+  init_memory();
+  if (dump_file(av[1]) == false)
+    return (1);
+  free_memory();
   return (0);
 }
