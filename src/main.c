@@ -5,11 +5,12 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar  4 13:34:04 2017 Arthur Josso
-** Last update Sun Mar  5 19:27:28 2017 Arthur Josso
+** Last update Sun Mar 12 00:23:35 2017 Arthur Josso
 */
 
 #include <stdio.h>
 #include "memory.h"
+#include "opcode.h"
 
 static int	usage(const char *binary)
 {

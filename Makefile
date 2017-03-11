@@ -5,10 +5,10 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Sun Mar  5 18:16:18 2017 Arthur Josso
+## Last update Sat Mar 11 21:33:46 2017 Arthur Josso
 ##
 
-CC	=	gcc
+CC	=	gcc -g
 
 NAME	=	a.out
 
@@ -20,7 +20,9 @@ LDFLAGS	+=
 
 SRC	=	./src/main.c \
 		./src/memory.c \
-		./src/misc.c
+		./src/misc.c \
+		./src/instruction.c \
+		./src/opcode.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -32,10 +34,10 @@ $(NAME):	$(OBJ)
 		@$(CC) $(OBJ) $(LDFLAGS) -o $(NAME)
 
 clean:
-		$(RM) $(OBJ)
+		@$(RM) $(OBJ)
 
 fclean:		clean
-		$(RM) $(NAME)
+		@$(RM) $(NAME)
 
 re:		fclean all
 

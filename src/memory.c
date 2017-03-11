@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 17:55:47 2017 Arthur Josso
-** Last update Sun Mar  5 19:25:11 2017 Arthur Josso
+** Last update Sat Mar 11 21:26:28 2017 Arthur Josso
 */
 
 #include <sys/types.h>
@@ -17,7 +17,7 @@
 #include "misc.h"
 
 t_memory	*mem;
-t_registers	*reg;
+t_registers	reg;
 
 uint8_t		get_byte(uint16_t addr)
 {
@@ -55,17 +55,15 @@ void		set_word(uint16_t addr, uint16_t value)
 void		init_memory()
 {
   mem = xalloc(sizeof(*mem));
-  reg = xalloc(sizeof(*reg));
-  reg->AF = 0x01B0;
-  reg->BC = 0x0013;
-  reg->DE = 0x00D8;
-  reg->HL = 0x014D;
-  reg->SP = 0xFFFE;
+  reg.AF = 0x01B0;
+  reg.BC = 0x0013;
+  reg.DE = 0x00D8;
+  reg.HL = 0x014D;
+  reg.SP = 0xFFFE;
 }
 
 void		free_memory()
 {
-  free(reg);
   free(mem);
 }
 

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 12:55:18 2017 Arthur Josso
-** Last update Sun Mar  5 19:19:02 2017 Arthur Josso
+** Last update Sat Mar 11 21:39:32 2017 Arthur Josso
 */
 
 #pragma once
@@ -86,7 +86,7 @@ typedef union
 */
 
 extern t_memory		*mem;
-extern t_registers	*reg;
+extern t_registers	reg;
 
 /*
 ** Accessers
