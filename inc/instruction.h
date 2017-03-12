@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Sat Mar 11 21:32:55 2017 Arthur Josso
+** Last update Sun Mar 12 16:10:20 2017 Arthur Josso
 */
 
 #pragma once
@@ -13,3 +13,9 @@
 #include "opcode.h"
 
 void inst_LD(t_parameter *param);
+void inst_LDH(t_parameter *param);
+void inst_LDD(t_parameter *param);
+void inst_LDI(t_parameter *param);
+void inst_LDHL(t_parameter *param);
+void inst_PUSH(t_parameter *param);
+void inst_POP(t_parameter *param);

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Sun Mar 12 00:54:40 2017 Arthur Josso
+** Last update Sun Mar 12 19:45:58 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -14,7 +14,7 @@
 
 t_instruction	inst_tab[] =
   {
-    // LD instruction
+    // LD
 
     {0x3E, 2, {P_REG_8(B), P_VAL_8}, inst_LD, "LD A, #"},
     {0x06, 2, {P_REG_8(B), P_VAL_8}, inst_LD, "LD B, n"},
@@ -101,7 +101,48 @@ t_instruction	inst_tab[] =
     {0x02, 2, {P_IREG_8(BC), P_REG_8(A)}, inst_LD, "LD (BC), A"},
     {0x12, 2, {P_IREG_8(DE), P_REG_8(A)}, inst_LD, "LD (DE), A"},
     {0x77, 2, {P_IREG_8(HL), P_REG_8(A)}, inst_LD, "LD (HL), A"},
-    {0xEA, 4, {P_IVAL_8, P_REG_8(A)}, inst_LD, "LD (nn), A"}
+    {0xEA, 4, {P_IVAL_8, P_REG_8(A)}, inst_LD, "LD (nn), A"},
+
+    // LD + offset
+
+    {0xF2, 2, {P_REG_8(A), P_REG_8(C)}, inst_LDH, "LD A, ($FF00 + C)"},
+    {0xE2, 2, {P_REG_8(C), P_REG_8(A)}, inst_LDH, "LD ($FF00 + C), A"},
+    {0xF0, 3, {P_REG_8(A), P_VAL_8}, inst_LDH, "LD A, ($FF00 + n)"},
+    {0xE0, 3, {P_VAL_8, P_REG_8(A)}, inst_LDH, "LD ($FF00 + n), A"},
+
+    // LD + inc or dec
+
+    {0x3A, 2, {P_REG_8(A), P_IREG_8(HL)}, inst_LDD, "LDD A, (HL)"},
+    {0x32, 2, {P_IREG_8(HL), P_REG_8(A)}, inst_LDD, "LDD (HL), A"},
+    {0x2A, 2, {P_REG_8(A), P_IREG_8(HL)}, inst_LDI, "LDI A, (HL)"},
+    {0x22, 2, {P_IREG_8(HL), P_REG_8(A)}, inst_LDI, "LDI (HL), A"},
+
+    // LD 16 bits
+
+    {0x01, 3, {P_REG_16(BC), P_VAL_16}, inst_LD, "LD BC, nn"},
+    {0x11, 3, {P_REG_16(DE), P_VAL_16}, inst_LD, "LD DE, nn"},
+    {0x21, 3, {P_REG_16(HL), P_VAL_16}, inst_LD, "LD HL, nn"},
+    {0x31, 3, {P_REG_16(SP), P_VAL_16}, inst_LD, "LD SP, nn"},
+
+    {0xF9, 2, {P_REG_16(SP), P_REG_16(HL)}, inst_LD, "LD SP, HL"},
+
+    {0x08, 5, {P_IVAL_16, P_REG_16(SP)}, inst_LD, "LD (nn), SP"},
+
+    {0xF8, 3, {P_REG_16(SP), P_VAL_8}, inst_LDHL, "LDHL SP, n"},
+
+    // PUSH and POP
+
+    {0xF5, 4, {P_IREG_16(SP), P_REG_16(AF)}, inst_PUSH, "PUSH AF"},
+    {0xC5, 4, {P_IREG_16(SP), P_REG_16(BC)}, inst_PUSH, "PUSH BC"},
+    {0xD5, 4, {P_IREG_16(SP), P_REG_16(DE)}, inst_PUSH, "PUSH DE"},
+    {0xE5, 4, {P_IREG_16(SP), P_REG_16(HL)}, inst_PUSH, "PUSH HL"},
+
+    {0xF1, 3, {P_REG_16(AF), P_IREG_16(SP)}, inst_POP, "POP AF"},
+    {0xC1, 3, {P_REG_16(BC), P_IREG_16(SP)}, inst_POP, "POP BC"},
+    {0xD1, 3, {P_REG_16(DE), P_IREG_16(SP)}, inst_POP, "POP DE"},
+    {0xE1, 3, {P_REG_16(HL), P_IREG_16(SP)}, inst_POP, "POP HL"},
+    
+    // 3.3.3 ALU
   };
 
 void	set_param_value(t_parameter *param, uint16_t value)

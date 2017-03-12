@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 12:55:18 2017 Arthur Josso
-** Last update Sat Mar 11 21:39:32 2017 Arthur Josso
+** Last update Sun Mar 12 15:56:31 2017 Arthur Josso
 */
 
 #pragma once
@@ -46,9 +46,9 @@ typedef enum
     Z
   } t_flag_bit;
 
-#define SET_FLAG(f)    	(reg->flags |= 1 << f)
-#define GET_FLAG(f)    	((reg->flags >> f) & 1)
-#define RESET_FLAG(f)	(reg->flags &= ~(1 << f))
+#define SET_FLAG(f)	(reg.flags |= 1 << f)
+#define RESET_FLAG(f)	(reg.flags &= ~(1 << f))
+#define GET_FLAG(f)	((reg.flags >> f) & 1)
 
 /*
 ** Memory Map
