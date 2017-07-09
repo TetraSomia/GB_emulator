@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 17:55:47 2017 Arthur Josso
-** Last update Sat Mar 11 21:26:28 2017 Arthur Josso
+** Last update Sun Jul  9 21:39:55 2017 Arthur Josso
 */
 
 #include <sys/types.h>
@@ -43,7 +43,7 @@ void		set_word(uint16_t addr, uint16_t value)
   uint16_t	*ptr;
 
   if (addr & 1)
-    fprintf(stderr, "WARNING: set_word: address not aligned\n");
+    emu_warn("set_word", "Address not aligned");
   ptr = (uint16_t*)(mem->raw + addr);
   *ptr = value;
   if (0xE000 <= addr && addr < 0xFE00)
