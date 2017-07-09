@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Sun Jul  9 21:34:20 2017 Arthur Josso
+## Last update Sun Jul  9 23:40:50 2017 Arthur Josso
 ##
 
 CC	=	gcc -g
@@ -20,12 +20,18 @@ LDFLAGS	+=
 
 S_ROOT	=	./src/
 
+S_ACCES	=	$(S_ROOT)accessor/
+
+S_INST	=	$(S_ROOT)instruction/
+
 SRC	=	$(S_ROOT)main.c 	\
 		$(S_ROOT)memory.c 	\
 		$(S_ROOT)misc.c 	\
-		$(S_ROOT)instruction.c 	\
-		$(S_ROOT)opcode.c	\
-		$(S_ROOT)param_op.c
+		$(S_ACCES)memory.c	\
+		$(S_ACCES)parameter.c	\
+		$(S_INST)opcode.c	\
+		$(S_INST)load.c		\
+		$(S_INST)stack.c
 
 OBJ	=	$(SRC:.c=.o)
 

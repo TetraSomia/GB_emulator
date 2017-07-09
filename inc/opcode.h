@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Sun Mar 12 00:17:08 2017 Arthur Josso
+** Last update Sun Jul  9 22:57:47 2017 Arthur Josso
 */
 
 #pragma once
@@ -43,14 +43,14 @@ typedef struct
   uint8_t	nb_cycles;
   t_parameter	param[2];
   void		(*func)(t_parameter *param);
-  char		*desc;
+  const char	*desc;
 } t_instruction;
 
 /*
 ** Array of instructions
 */
 
-extern t_instruction	inst_tab[];
+extern const t_instruction	inst_tab[];
 
 /*
 ** Parameter simplifier

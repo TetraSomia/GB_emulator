@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 12:55:18 2017 Arthur Josso
-** Last update Sun Mar 12 15:56:31 2017 Arthur Josso
+** Last update Sun Jul  9 22:51:54 2017 Arthur Josso
 */
 
 #pragma once
@@ -36,14 +36,14 @@ typedef struct
 
 typedef enum 
   {
-    NONE0 = 0,
-    NONE1,
-    NONE2,
-    NONE3,
-    C,
-    H,
-    N,
-    Z
+    FLAG_NONE0 = 0,
+    FLAG_NONE1,
+    FLAG_NONE2,
+    FLAG_NONE3,
+    FLAG_C,
+    FLAG_H,
+    FLAG_N,
+    FLAG_Z
   } t_flag_bit;
 
 #define SET_FLAG(f)	(reg.flags |= 1 << f)

@@ -5,14 +5,14 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Sun Jul  9 21:32:58 2017 Arthur Josso
+** Last update Sun Jul  9 22:57:37 2017 Arthur Josso
 */
 
 #include "memory.h"
 #include "instruction.h"
 #include "opcode.h"
 
-t_instruction	inst_tab[] =
+const t_instruction	inst_tab[] =
   {
     // LD
 

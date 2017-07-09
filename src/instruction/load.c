@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:14 2017 Arthur Josso
-** Last update Sun Mar 12 16:13:54 2017 Arthur Josso
+** Last update Sun Jul  9 23:34:46 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -37,22 +37,10 @@ void    inst_LDI(t_parameter *param)
   reg.HL++;
 }
 
-void    inst_PUSH(t_parameter *param)
-{
-  reg.SP -= 2;
-  set_param_value(param, get_param_value(param + 1));
-}
-
-void    inst_POP(t_parameter *param)
-{
-  set_param_value(param, get_param_value(param + 1));
-  reg.SP += 2;
-}
-
 void	inst_LDHL(t_parameter *param)
 {
   reg.HL = reg.SP + ((int8_t)get_param_value(param + 1));
-  RESET_FLAG(Z);
-  RESET_FLAG(N);
+  RESET_FLAG(FLAG_Z);
+  RESET_FLAG(FLAG_N);
   // flag H & C
 }
