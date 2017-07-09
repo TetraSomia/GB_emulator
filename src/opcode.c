@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Sun Mar 12 19:45:58 2017 Arthur Josso
+** Last update Sun Jul  9 21:27:36 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -151,20 +151,28 @@ void	set_param_value(t_parameter *param, uint16_t value)
     {
     case REG_8:
       *(uint8_t*)(param->addr) = value;
+      break;
     case REG_16:
       *(uint16_t*)(param->addr) = value;
+      break;
     case IREG_8:
       set_byte(*(uint16_t*)(param->addr), value);
+      break;
     case IREG_16:
       set_word(*(uint16_t*)(param->addr), value);
+      break;
     case VAL_8:
       set_byte(reg.PC + 1, value);
+      break;
     case VAL_16:
       set_word(reg.PC + 2, value);
+      break;
     case IVAL_8:
       set_byte(get_word(reg.PC + 2), value);
+      break;
     case IVAL_16:
       set_word(get_word(reg.PC + 2), value);
+      break;
     default:
       return;
     }
