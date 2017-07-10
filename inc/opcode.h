@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Sun Jul  9 22:57:47 2017 Arthur Josso
+** Last update Mon Jul 10 23:39:14 2017 Arthur Josso
 */
 
 #pragma once
@@ -67,7 +67,15 @@ extern const t_instruction	inst_tab[];
 #define P_RAW(V)	{RAW, V, NULL}
 
 /*
-** Accessers with parameters
+** Parameter specifier
+*/
+
+#define IS_16_PARAM(p)	(p->type & 1)
+#define IS_8_PARAM(p)	(!IS_16_PARAM(p))
+#define PARAM_SIZE(p)	(IS_16_PARAM(p) ? 16 : 8)
+
+/*
+** Accessors with parameters
 */
 
 void		set_param_value(t_parameter *param, uint16_t value);

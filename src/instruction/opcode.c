@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Sun Jul  9 22:57:37 2017 Arthur Josso
+** Last update Tue Jul 11 00:40:38 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -23,7 +23,7 @@ const t_instruction	inst_tab[] =
     {0x1E, 2, {P_REG_8(E), P_VAL_8}, inst_LD, "LD E, n"},
     {0x26, 2, {P_REG_8(H), P_VAL_8}, inst_LD, "LD H, n"},
     {0x2E, 2, {P_REG_8(L), P_VAL_8}, inst_LD, "LD L, n"},
-    
+
     {0x7F, 1, {P_REG_8(A), P_REG_8(A)}, inst_LD, "LD A, A"},
     {0x78, 1, {P_REG_8(A), P_REG_8(B)}, inst_LD, "LD A, B"},
     {0x79, 1, {P_REG_8(A), P_REG_8(C)}, inst_LD, "LD A, C"},
@@ -141,6 +141,24 @@ const t_instruction	inst_tab[] =
     {0xC1, 3, {P_REG_16(BC), P_IREG_16(SP)}, inst_POP, "POP BC"},
     {0xD1, 3, {P_REG_16(DE), P_IREG_16(SP)}, inst_POP, "POP DE"},
     {0xE1, 3, {P_REG_16(HL), P_IREG_16(SP)}, inst_POP, "POP HL"},
-    
-    // 3.3.3 ALU
+
+    // ALU : ADD
+
+    {0x87, 1, {P_REG_8(A), P_REG_8(A)}, inst_ADD, "ADD A, A"},
+    {0x80, 1, {P_REG_8(A), P_REG_8(B)}, inst_ADD, "ADD A, B"},
+    {0x81, 1, {P_REG_8(A), P_REG_8(C)}, inst_ADD, "ADD A, C"},
+    {0x82, 1, {P_REG_8(A), P_REG_8(D)}, inst_ADD, "ADD A, D"},
+    {0x83, 1, {P_REG_8(A), P_REG_8(E)}, inst_ADD, "ADD A, E"},
+    {0x84, 1, {P_REG_8(A), P_REG_8(H)}, inst_ADD, "ADD A, H"},
+    {0x85, 1, {P_REG_8(A), P_REG_8(L)}, inst_ADD, "ADD A, L"},
+    {0x86, 2, {P_REG_8(A), P_IREG_8(HL)}, inst_ADD, "ADD A, (HL)"},
+    {0xC6, 2, {P_REG_8(A), P_VAL_8}, inst_ADD, "ADD A, #"},
+
+    {0x09, 2, {P_REG_16(HL), P_REG_16(BC)}, inst_ADD, "ADD HL, BC"},
+    {0x19, 2, {P_REG_16(HL), P_REG_16(DE)}, inst_ADD, "ADD HL, DE"},
+    {0x29, 2, {P_REG_16(HL), P_REG_16(HL)}, inst_ADD, "ADD HL, HL"},
+    {0x39, 2, {P_REG_16(HL), P_REG_16(SP)}, inst_ADD, "ADD HL, SP"},
+
+    {0xE8, 4, {P_REG_16(SP), P_VAL_8}, inst_ADD_SP, "ADD SP, #"},
+
   };

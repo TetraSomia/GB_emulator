@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 12:55:18 2017 Arthur Josso
-** Last update Sun Jul  9 22:51:54 2017 Arthur Josso
+** Last update Tue Jul 11 00:00:31 2017 Arthur Josso
 */
 
 #pragma once
@@ -49,6 +49,10 @@ typedef enum
 #define SET_FLAG(f)	(reg.flags |= 1 << f)
 #define RESET_FLAG(f)	(reg.flags &= ~(1 << f))
 #define GET_FLAG(f)	((reg.flags >> f) & 1)
+
+#define CONDITION_FLAG(f, c)	((c) ? SET_FLAG(f) : RESET_FLAG(f))
+
+#define IS_CARRY(a, b, s)	(((((uint32_t)a) + ((uint32_t)b)) >> s) != 0)
 
 /*
 ** Memory Map

@@ -1,0 +1,11 @@
+DANGEROUS :
+
+- ...
+
+SHOULD NOT BE A PROBLEM :
+
+- Affect Z flag in 16bit ADD instruction
+
+USELESS :
+
+- Do not handle H flag (I don't find its purpose)
