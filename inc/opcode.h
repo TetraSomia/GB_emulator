@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Wed Jul 12 16:34:18 2017 Arthur Josso
+** Last update Wed Jul 12 19:31:39 2017 Arthur Josso
 */
 
 #pragma once
@@ -17,7 +17,7 @@
 ** Instruction descriptor structures
 */
 
-#define CUSTOM_PC_OFFSET	(-1)
+#define CUSTOM_NB_CYCLES	(255)
 
 typedef enum
   {

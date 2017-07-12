@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Wed Jul 12 18:15:03 2017 Arthur Josso
+** Last update Wed Jul 12 19:59:14 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -265,4 +265,8 @@ const t_instruction	inst_tab[] =
     {0xBD, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_CP, "CP A, L"},
     {0xBE, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_CP, "CP A, (HL)"},
     {0xFE, 2, 2, {P_REG_8(A), P_VAL_8}, inst_CP, "CP A, #"},
+
+    // CB prefixed instructions
+
+    {0xCB, CUSTOM_NB_CYCLES, 2, {P_VAL_8, P_VAL_8}, inst_CB_prefix, "CB prefix"},
   };

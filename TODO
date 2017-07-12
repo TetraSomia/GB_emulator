@@ -1,7 +1,13 @@
 - static ordered list for instructions
 - offset row of PC in list (or -1 for custom offset)
-- CB xx instrution handling : in core (+logic) or in BC func (+no special case) ?
+- cb funcs : manual cycles adder
 
 - implement z80 instructions :
-  SUB
+  Misc (CBxx (swap))
+  Rot and Shift (CBxx)
+  Bit op (CBxx)
+  Jumps
+  Calls
+  Restart
+  Returns
   

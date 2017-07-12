@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Wed Jul 12 18:16:52 2017 Arthur Josso
+** Last update Wed Jul 12 19:58:15 2017 Arthur Josso
 */
 
 #pragma once
@@ -30,3 +30,4 @@ void inst_XOR(t_parameter *param);
 void inst_INC(t_parameter *param);
 void inst_DEC(t_parameter *param);
 void inst_CP(t_parameter *param);
+void inst_CB_prefix(t_parameter *param);
