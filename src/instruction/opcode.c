@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Wed Jul 12 16:48:21 2017 Arthur Josso
+** Last update Wed Jul 12 17:34:40 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -171,4 +171,24 @@ const t_instruction	inst_tab[] =
     {0x8E, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_ADC, "ADC A, (HL)"},
     {0xCE, 2, 2, {P_REG_8(A), P_VAL_8}, inst_ADC, "ADC A, #"},
 
+    // ALU : SUB
+
+    {0x97, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_SUB, "SUB A, A"},
+    {0x90, 1, 1, {P_REG_8(A), P_REG_8(B)}, inst_SUB, "SUB A, B"},
+    {0x91, 1, 1, {P_REG_8(A), P_REG_8(C)}, inst_SUB, "SUB A, C"},
+    {0x92, 1, 1, {P_REG_8(A), P_REG_8(D)}, inst_SUB, "SUB A, D"},
+    {0x93, 1, 1, {P_REG_8(A), P_REG_8(E)}, inst_SUB, "SUB A, E"},
+    {0x94, 1, 1, {P_REG_8(A), P_REG_8(H)}, inst_SUB, "SUB A, H"},
+    {0x95, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_SUB, "SUB A, L"},
+    {0x96, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_SUB, "SUB A, (HL)"},
+    {0xD6, 2, 2, {P_REG_8(A), P_VAL_8}, inst_SUB, "SUB A, #"},
+
+    {0x9F, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_SBC, "SBC A, A"},
+    {0x98, 1, 1, {P_REG_8(A), P_REG_8(B)}, inst_SBC, "SBC A, B"},
+    {0x99, 1, 1, {P_REG_8(A), P_REG_8(C)}, inst_SBC, "SBC A, C"},
+    {0x9A, 1, 1, {P_REG_8(A), P_REG_8(D)}, inst_SBC, "SBC A, D"},
+    {0x9B, 1, 1, {P_REG_8(A), P_REG_8(E)}, inst_SBC, "SBC A, E"},
+    {0x9C, 1, 1, {P_REG_8(A), P_REG_8(H)}, inst_SBC, "SBC A, H"},
+    {0x9D, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_SBC, "SBC A, L"},
+    {0x9E, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_SBC, "SBC A, (HL)"},
   };

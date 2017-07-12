@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 10 22:27:17 2017 Arthur Josso
-** Last update Wed Jul 12 17:09:10 2017 Arthur Josso
+** Last update Wed Jul 12 17:37:17 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -44,4 +44,30 @@ void		inst_ADD_SP(t_parameter *param)
   reg.SP += offset;
   RESET_FLAG(FLAG_Z);
   RESET_FLAG(FLAG_N);
+}
+
+void		inst_SUB(t_parameter *param)
+{
+  uint8_t	a;
+  uint8_t	b;
+
+  a = get_param_value(param);
+  b = get_param_value(param + 1);
+  set_param_value(param, a - b);
+  CONDITION_FLAG(FLAG_Z, a == b);
+  SET_FLAG(FLAG_N);
+  CONDITION_FLAG(FLAG_C, a < b);
+}
+
+void		inst_SBC(t_parameter *param)
+{
+  uint8_t	a;
+  uint8_t	b;
+
+  a = get_param_value(param);
+  b = get_param_value(param + 1) + GET_FLAG(FLAG_C);
+  set_param_value(param, a - b);
+  CONDITION_FLAG(FLAG_Z, a == b);
+  SET_FLAG(FLAG_N);
+  CONDITION_FLAG(FLAG_C, a < b);
 }
