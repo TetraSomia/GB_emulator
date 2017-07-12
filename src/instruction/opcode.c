@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Wed Jul 12 18:09:07 2017 Arthur Josso
+** Last update Wed Jul 12 18:15:03 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -253,4 +253,16 @@ const t_instruction	inst_tab[] =
     {0x1B, 2, 1, {P_REG_16(DE), P_REG_16(DE)}, inst_DEC, "DEC DE"},
     {0x2B, 2, 1, {P_REG_16(HL), P_REG_16(HL)}, inst_DEC, "DEC HL"},
     {0x3B, 2, 1, {P_REG_16(SP), P_REG_16(SP)}, inst_DEC, "DEC SP"},
+
+    //ALU : Compare
+
+    {0xBF, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_CP, "CP A, A"},
+    {0xB8, 1, 1, {P_REG_8(A), P_REG_8(B)}, inst_CP, "CP A, B"},
+    {0xB9, 1, 1, {P_REG_8(A), P_REG_8(C)}, inst_CP, "CP A, C"},
+    {0xBA, 1, 1, {P_REG_8(A), P_REG_8(D)}, inst_CP, "CP A, D"},
+    {0xBB, 1, 1, {P_REG_8(A), P_REG_8(E)}, inst_CP, "CP A, E"},
+    {0xBC, 1, 1, {P_REG_8(A), P_REG_8(H)}, inst_CP, "CP A, H"},
+    {0xBD, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_CP, "CP A, L"},
+    {0xBE, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_CP, "CP A, (HL)"},
+    {0xFE, 2, 2, {P_REG_8(A), P_VAL_8}, inst_CP, "CP A, #"},
   };

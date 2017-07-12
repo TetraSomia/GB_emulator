@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 10 22:27:17 2017 Arthur Josso
-** Last update Wed Jul 12 18:08:52 2017 Arthur Josso
+** Last update Wed Jul 12 18:16:26 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -123,4 +123,16 @@ void	inst_DEC(t_parameter *param)
       CONDITION_FLAG(FLAG_Z, get_param_value(param) == 0);
       SET_FLAG(FLAG_N);
     }
+}
+
+void		inst_CP(t_parameter *param)
+{
+  uint8_t	a;
+  uint8_t	b;
+
+  a = get_param_value(param);
+  b = get_param_value(param + 1);
+  CONDITION_FLAG(FLAG_Z, a == b);
+  SET_FLAG(FLAG_N);
+  CONDITION_FLAG(FLAG_C, a < b);
 }
