@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 10 22:27:17 2017 Arthur Josso
-** Last update Wed Jul 12 18:16:26 2017 Arthur Josso
+** Last update Wed Jul 12 18:26:22 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -19,7 +19,8 @@ void		inst_ADD(t_parameter *param)
   a = get_param_value(param);
   b = get_param_value(param + 1);
   set_param_value(param, a + b);
-  CONDITION_FLAG(FLAG_Z, get_param_value(param) == 0);
+  if (IS_8_PARAM(param))
+    CONDITION_FLAG(FLAG_Z, get_param_value(param) == 0);
   RESET_FLAG(FLAG_N);
   CONDITION_FLAG(FLAG_C, IS_CARRY(a, b, PARAM_SIZE(param)));
 }
