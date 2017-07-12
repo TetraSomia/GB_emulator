@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Wed Jul 12 17:34:40 2017 Arthur Josso
+** Last update Wed Jul 12 17:53:28 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -191,4 +191,36 @@ const t_instruction	inst_tab[] =
     {0x9C, 1, 1, {P_REG_8(A), P_REG_8(H)}, inst_SBC, "SBC A, H"},
     {0x9D, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_SBC, "SBC A, L"},
     {0x9E, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_SBC, "SBC A, (HL)"},
+
+    // ALU : Bitwise operators
+
+    {0xA7, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_AND, "AND A, A"},
+    {0xA0, 1, 1, {P_REG_8(A), P_REG_8(B)}, inst_AND, "AND A, B"},
+    {0xA1, 1, 1, {P_REG_8(A), P_REG_8(C)}, inst_AND, "AND A, C"},
+    {0xA2, 1, 1, {P_REG_8(A), P_REG_8(D)}, inst_AND, "AND A, D"},
+    {0xA3, 1, 1, {P_REG_8(A), P_REG_8(E)}, inst_AND, "AND A, E"},
+    {0xA4, 1, 1, {P_REG_8(A), P_REG_8(H)}, inst_AND, "AND A, H"},
+    {0xA5, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_AND, "AND A, L"},
+    {0xA6, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_AND, "AND A, (HL)"},
+    {0xE6, 2, 2, {P_REG_8(A), P_VAL_8}, inst_AND, "AND A, #"},
+
+    {0xB7, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_OR, "OR A, A"},
+    {0xB0, 1, 1, {P_REG_8(A), P_REG_8(B)}, inst_OR, "OR A, B"},
+    {0xB1, 1, 1, {P_REG_8(A), P_REG_8(C)}, inst_OR, "OR A, C"},
+    {0xB2, 1, 1, {P_REG_8(A), P_REG_8(D)}, inst_OR, "OR A, D"},
+    {0xB3, 1, 1, {P_REG_8(A), P_REG_8(E)}, inst_OR, "OR A, E"},
+    {0xB4, 1, 1, {P_REG_8(A), P_REG_8(H)}, inst_OR, "OR A, H"},
+    {0xB5, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_OR, "OR A, L"},
+    {0xB6, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_OR, "OR A, (HL)"},
+    {0xF6, 2, 2, {P_REG_8(A), P_VAL_8}, inst_OR, "OR A, #"},
+
+    {0xAF, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_XOR, "XOR A, A"},
+    {0xA8, 1, 1, {P_REG_8(A), P_REG_8(B)}, inst_XOR, "XOR A, B"},
+    {0xA9, 1, 1, {P_REG_8(A), P_REG_8(C)}, inst_XOR, "XOR A, C"},
+    {0xAA, 1, 1, {P_REG_8(A), P_REG_8(D)}, inst_XOR, "XOR A, D"},
+    {0xAB, 1, 1, {P_REG_8(A), P_REG_8(E)}, inst_XOR, "XOR A, E"},
+    {0xAC, 1, 1, {P_REG_8(A), P_REG_8(H)}, inst_XOR, "XOR A, H"},
+    {0xAD, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_XOR, "XOR A, L"},
+    {0xAE, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_XOR, "XOR A, (HL)"},
+    {0xEE, 2, 2, {P_REG_8(A), P_VAL_8}, inst_XOR, "XOR A, #"},
   };

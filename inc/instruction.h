@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Wed Jul 12 17:38:22 2017 Arthur Josso
+** Last update Wed Jul 12 17:43:15 2017 Arthur Josso
 */
 
 #pragma once
@@ -24,3 +24,6 @@ void inst_ADD_SP(t_parameter *param);
 void inst_ADC(t_parameter *param);
 void inst_SUB(t_parameter *param);
 void inst_SBC(t_parameter *param);
+void inst_AND(t_parameter *param);
+void inst_OR(t_parameter *param);
+void inst_XOR(t_parameter *param);

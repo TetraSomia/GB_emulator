@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 10 22:27:17 2017 Arthur Josso
-** Last update Wed Jul 12 17:37:17 2017 Arthur Josso
+** Last update Wed Jul 12 17:50:28 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -70,4 +70,37 @@ void		inst_SBC(t_parameter *param)
   CONDITION_FLAG(FLAG_Z, a == b);
   SET_FLAG(FLAG_N);
   CONDITION_FLAG(FLAG_C, a < b);
+}
+
+void		inst_AND(t_parameter *param)
+{
+  uint8_t	result;
+
+  result = get_param_value(param) & get_param_value(param + 1);
+  set_param_value(param, result);
+  CONDITION_FLAG(FLAG_Z, result == 0);
+  RESET_FLAG(FLAG_N);
+  RESET_FLAG(FLAG_C);
+}
+
+void		inst_OR(t_parameter *param)
+{
+  uint8_t	result;
+
+  result = get_param_value(param) | get_param_value(param + 1);
+  set_param_value(param, result);
+  CONDITION_FLAG(FLAG_Z, result == 0);
+  RESET_FLAG(FLAG_N);
+  RESET_FLAG(FLAG_C);
+}
+
+void		inst_XOR(t_parameter *param)
+{
+  uint8_t	result;
+
+  result = get_param_value(param) ^ get_param_value(param + 1);
+  set_param_value(param, result);
+  CONDITION_FLAG(FLAG_Z, result == 0);
+  RESET_FLAG(FLAG_N);
+  RESET_FLAG(FLAG_C);
 }
