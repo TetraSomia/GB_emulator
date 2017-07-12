@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Mon Jul 10 23:39:14 2017 Arthur Josso
+** Last update Wed Jul 12 16:34:18 2017 Arthur Josso
 */
 
 #pragma once
@@ -16,6 +16,8 @@
 /*
 ** Instruction descriptor structures
 */
+
+#define CUSTOM_PC_OFFSET	(-1)
 
 typedef enum
   {
@@ -41,6 +43,7 @@ typedef struct
 {
   uint8_t	opcode;
   uint8_t	nb_cycles;
+  uint8_t	byte_size;
   t_parameter	param[2];
   void		(*func)(t_parameter *param);
   const char	*desc;
