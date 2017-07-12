@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Wed Jul 12 16:43:13 2017 Arthur Josso
+** Last update Wed Jul 12 16:48:21 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -160,5 +160,15 @@ const t_instruction	inst_tab[] =
     {0x39, 2, 1, {P_REG_16(HL), P_REG_16(SP)}, inst_ADD, "ADD HL, SP"},
 
     {0xE8, 4, 2, {P_REG_16(SP), P_VAL_8}, inst_ADD_SP, "ADD SP, #"},
+
+    {0x8F, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_ADC, "ADC A, A"},
+    {0x88, 1, 1, {P_REG_8(A), P_REG_8(B)}, inst_ADC, "ADC A, B"},
+    {0x89, 1, 1, {P_REG_8(A), P_REG_8(C)}, inst_ADC, "ADC A, C"},
+    {0x8A, 1, 1, {P_REG_8(A), P_REG_8(D)}, inst_ADC, "ADC A, D"},
+    {0x8B, 1, 1, {P_REG_8(A), P_REG_8(E)}, inst_ADC, "ADC A, E"},
+    {0x8C, 1, 1, {P_REG_8(A), P_REG_8(H)}, inst_ADC, "ADC A, H"},
+    {0x8D, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_ADC, "ADC A, L"},
+    {0x8E, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_ADC, "ADC A, (HL)"},
+    {0xCE, 2, 2, {P_REG_8(A), P_VAL_8}, inst_ADC, "ADC A, #"},
 
   };
