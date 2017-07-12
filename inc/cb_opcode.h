@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Jul 12 19:11:04 2017 Arthur Josso
-** Last update Wed Jul 12 20:10:37 2017 Arthur Josso
+** Last update Wed Jul 12 21:14:56 2017 Arthur Josso
 */
 
 #pragma once
@@ -36,5 +36,5 @@ typedef struct
 {
   uint8_t	x;
   uint8_t	y;
-  void		(*op)(t_cb_byte op_code);
+  void		(*op)(t_cb_byte op_code, t_parameter *concerned_reg);
 } t_cb_func_desc;
