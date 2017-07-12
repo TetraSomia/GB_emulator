@@ -3,5 +3,5 @@
 - CB xx instrution handling : in core (+logic) or in BC func (+no special case) ?
 
 - implement z80 instructions :
-  ADC
+  SUB
   
