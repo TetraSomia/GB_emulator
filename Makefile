@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Wed Jul 12 19:55:01 2017 Arthur Josso
+## Last update Thu Jul 13 20:02:59 2017 Arthur Josso
 ##
 
 CC	=	gcc -g
@@ -33,7 +33,8 @@ SRC	=	$(S_ROOT)main.c 	\
 		$(S_INST)load.c		\
 		$(S_INST)stack.c	\
 		$(S_INST)alu.c		\
-		$(S_INST)cb_prefix.c
+		$(S_INST)cb_prefix.c	\
+		$(S_INST)misc.c
 
 OBJ	=	$(SRC:.c=.o)
 

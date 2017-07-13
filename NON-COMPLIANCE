@@ -4,8 +4,10 @@ DANGEROUS :
 
 SHOULD NOT BE A PROBLEM :
 
-- ...
+- Do not handle H flag
+- DAA instruction not perfect
+- EI and DI instructions take effect immediately (instead of after their execution)
 
 USELESS :
 
-- Do not handle H flag (I don't find its purpose)
+- ...

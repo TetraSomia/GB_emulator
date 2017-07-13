@@ -1,13 +1,10 @@
 - static ordered list for instructions
-- offset row of PC in list (or -1 for custom offset)
-- cb funcs : manual cycles adder
+- cb funcs : manual cycles adder (see comment)
 
 - implement z80 instructions :
-  Misc (CBxx (swap))
-  Rot and Shift (CBxx)
-  Bit op (CBxx)
+  Misc (no swap)
+  Rot and Shift (no CB..)
   Jumps
   Calls
   Restart
   Returns
-  

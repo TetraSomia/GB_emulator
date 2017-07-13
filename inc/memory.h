@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 12:55:18 2017 Arthur Josso
-** Last update Tue Jul 11 00:00:31 2017 Arthur Josso
+** Last update Thu Jul 13 20:35:59 2017 Arthur Josso
 */
 
 #pragma once
@@ -36,7 +36,7 @@ typedef struct
 
 typedef enum 
   {
-    FLAG_NONE0 = 0,
+    FLAG_I = 0,
     FLAG_NONE1,
     FLAG_NONE2,
     FLAG_NONE3,

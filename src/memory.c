@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 17:55:47 2017 Arthur Josso
-** Last update Sun Jul  9 23:39:08 2017 Arthur Josso
+** Last update Thu Jul 13 20:38:47 2017 Arthur Josso
 */
 
 #include <sys/types.h>
@@ -27,6 +27,8 @@ void		init_memory()
   reg.DE = 0x00D8;
   reg.HL = 0x014D;
   reg.SP = 0xFFFE;
+  reg.flags = 0;
+  SET_FLAG(FLAG_I);
 }
 
 void		free_memory()
