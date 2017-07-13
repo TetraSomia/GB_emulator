@@ -5,60 +5,33 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Jul 12 19:55:12 2017 Arthur Josso
-** Last update Thu Jul 13 18:51:06 2017 Arthur Josso
+** Last update Thu Jul 13 21:01:33 2017 Arthur Josso
 */
 
 #include "memory.h"
 #include "opcode.h"
 #include "cb_opcode.h"
+#include "instruction.h"
 #include "misc.h"
 
-static void	cb_shift(uint8_t type, t_parameter *concerned_reg)
+static void		cb_shift(uint8_t type, t_parameter *concerned_reg)
 {
-  uint8_t	tmp;
-  uint8_t	carry_save;
-  t_cb_shift_op	op_type;
+  const t_op_func	rot_funcs[] =
+  {
+    inst_RLC,
+    inst_RRC,
+    inst_RL,
+    inst_RR,
+    inst_SLA,
+    inst_SRA,
+    NULL,
+    inst_SRL
+  };
 
-  tmp = get_param_value(concerned_reg);
-  carry_save = GET_FLAG(FLAG_C);
-  op_type = type;
-  switch (op_type)
-    {
-    case CB_RLC:
-      CONDITION_FLAG(FLAG_C, tmp >> 7);
-      tmp = (tmp << 1) | carry_save;
-      break;
-    case CB_RRC:
-      CONDITION_FLAG(FLAG_C, tmp & 1);
-      tmp = (tmp >> 1) | (carry_save << 7);
-      break;
-    case CB_RL:
-      CONDITION_FLAG(FLAG_C, tmp >> 7);
-      tmp = (tmp << 1) | (tmp >> 7);
-      break;
-    case CB_RR:
-      CONDITION_FLAG(FLAG_C, tmp & 1);
-      tmp = (tmp >> 1) | (tmp << 7);
-      break;
-    case CB_SLA:
-      CONDITION_FLAG(FLAG_C, tmp >> 7);
-      tmp <<= 1;
-      break;
-    case CB_SRA:
-      CONDITION_FLAG(FLAG_C, tmp & 1);
-      tmp = (tmp >> 1) | (tmp & (1 << 7));
-      break;
-    case CB_SWAP:
-      emu_warn("cb_shift", "Malformed opcode");
-      break;
-    case CB_SRL:
-      CONDITION_FLAG(FLAG_C, tmp & 1);
-      tmp >>= 1;
-      break;
-    };
-  set_param_value(concerned_reg, tmp);
-  CONDITION_FLAG(FLAG_Z, tmp == 0);
-  RESET_FLAG(FLAG_N);
+  if (rot_funcs[type] == NULL)
+    emu_warn("cb_shift", "Malformed opcode");
+  else
+    rot_funcs[type](concerned_reg);
 }
 
 static void	cb_swap(uint8_t swap_specifier, t_parameter *concerned_reg)

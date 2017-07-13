@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Thu Jul 13 20:31:52 2017 Arthur Josso
+** Last update Thu Jul 13 20:51:04 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -265,6 +265,13 @@ const t_instruction	inst_tab[] =
     {0xBD, 1, 1, {P_REG_8(A), P_REG_8(L)}, inst_CP, "CP A, L"},
     {0xBE, 2, 1, {P_REG_8(A), P_IREG_8(HL)}, inst_CP, "CP A, (HL)"},
     {0xFE, 2, 2, {P_REG_8(A), P_VAL_8}, inst_CP, "CP A, #"},
+
+    // Rotation
+
+    {0x07, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_RLC, "RLC A"},
+    {0x17, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_RL, "RL A"},
+    {0x0F, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_RRC, "RRC A"},
+    {0x1F, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_RR, "RR A"},
 
     // Misc
 

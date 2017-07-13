@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Thu Jul 13 20:32:36 2017 Arthur Josso
+** Last update Thu Jul 13 20:49:59 2017 Arthur Josso
 */
 
 #pragma once
@@ -19,6 +19,7 @@ void inst_LDI(t_parameter *param);
 void inst_LDHL(t_parameter *param);
 void inst_PUSH(t_parameter *param);
 void inst_POP(t_parameter *param);
+
 void inst_ADD(t_parameter *param);
 void inst_ADD_SP(t_parameter *param);
 void inst_ADC(t_parameter *param);
@@ -30,6 +31,14 @@ void inst_XOR(t_parameter *param);
 void inst_INC(t_parameter *param);
 void inst_DEC(t_parameter *param);
 void inst_CP(t_parameter *param);
+
+void inst_RLC(t_parameter *param);
+void inst_RRC(t_parameter *param);
+void inst_RL(t_parameter *param);
+void inst_RR(t_parameter *param);
+void inst_SLA(t_parameter *param);
+void inst_SRA(t_parameter *param);
+void inst_SRL(t_parameter *param);
 
 void inst_DAA(t_parameter *param);
 void inst_CPL(t_parameter *param);

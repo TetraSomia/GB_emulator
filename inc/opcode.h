@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Wed Jul 12 19:31:39 2017 Arthur Josso
+** Last update Thu Jul 13 20:55:54 2017 Arthur Josso
 */
 
 #pragma once
@@ -39,13 +39,15 @@ typedef struct
   void		*addr;
 } t_parameter;
 
+typedef void (*t_op_func)(t_parameter *param);
+
 typedef struct
 {
   uint8_t	opcode;
   uint8_t	nb_cycles;
   uint8_t	byte_size;
   t_parameter	param[2];
-  void		(*func)(t_parameter *param);
+  t_op_func	func;
   const char	*desc;
 } t_instruction;
 

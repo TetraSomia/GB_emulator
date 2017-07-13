@@ -5,12 +5,12 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Thu Jul 13 20:02:59 2017 Arthur Josso
+## Last update Thu Jul 13 21:00:28 2017 Arthur Josso
 ##
 
 CC	=	gcc -g
 
-NAME	=	a.out
+NAME	=	GB_emulator
 
 INC	=	./inc/
 
@@ -34,7 +34,8 @@ SRC	=	$(S_ROOT)main.c 	\
 		$(S_INST)stack.c	\
 		$(S_INST)alu.c		\
 		$(S_INST)cb_prefix.c	\
-		$(S_INST)misc.c
+		$(S_INST)misc.c		\
+		$(S_INST)rotation.c
 
 OBJ	=	$(SRC:.c=.o)
 
