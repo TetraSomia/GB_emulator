@@ -5,45 +5,57 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Jul 12 19:55:12 2017 Arthur Josso
-** Last update Wed Jul 12 21:23:47 2017 Arthur Josso
+** Last update Thu Jul 13 18:16:27 2017 Arthur Josso
 */
 
 #include "memory.h"
 #include "opcode.h"
 #include "cb_opcode.h"
 
-static void	cb_swap(t_cb_byte op_code, t_parameter *concerned_reg)
+static void	cb_shift(uint8_t type, t_parameter *concerned_reg)
+{
+  (void)type;
+  (void)concerned_reg;
+}
+
+static void	cb_swap(uint8_t type, t_parameter *concerned_reg)
 {
   uint8_t	tmp;
 
-  (void)op_code;
+  (void)type;
   tmp = get_param_value(concerned_reg);
   tmp = (tmp << 4) | (tmp >> 4);
   set_param_value(concerned_reg, tmp);
+  CONDITION_FLAG(FLAG_Z, tmp == 0);
+  RESET_FLAG(FLAG_N);
+  RESET_FLAG(FLAG_C);
 }
 
-static void	cb_shift(t_cb_byte op_code, t_parameter *concerned_reg)
+static void	cb_bit(uint8_t bit, t_parameter *concerned_reg)
 {
-  (void)op_code;
-  (void)concerned_reg;
+  uint8_t	tmp;
+
+  tmp = get_param_value(concerned_reg);
+  CONDITION_FLAG(FLAG_Z, ((tmp >> bit) & 1) == 0);
+  RESET_FLAG(FLAG_N);
 }
 
-static void	cb_bit(t_cb_byte op_code, t_parameter *concerned_reg)
+static void	cb_reset(uint8_t bit, t_parameter *concerned_reg)
 {
-  (void)op_code;
-  (void)concerned_reg;
+  uint8_t	tmp;
+
+  tmp =	get_param_value(concerned_reg);
+  tmp &= ~(1 << bit);
+  set_param_value(concerned_reg, tmp);
 }
 
-static void	cb_reset(t_cb_byte op_code, t_parameter *concerned_reg)
+static void	cb_set(uint8_t bit, t_parameter *concerned_reg)
 {
-  (void)op_code;
-  (void)concerned_reg;
-}
+  uint8_t	tmp;
 
-static void	cb_set(t_cb_byte op_code, t_parameter *concerned_reg)
-{
-  (void)op_code;
-  (void)concerned_reg;
+  tmp = get_param_value(concerned_reg);
+  tmp |= 1 << bit;
+  set_param_value(concerned_reg, tmp);
 }
 
 static const t_cb_func_desc	cb_ops[] =
@@ -81,7 +93,7 @@ void		inst_CB_prefix(t_parameter *param)
       if (cb_ops[i].x == op_code.x &&
 	  (cb_ops[i].y == Y_NOT_MANDATORY || cb_ops[i].y == op_code.y))
 	{
-	  cb_ops[i].op(op_code, concerned_reg);
+	  cb_ops[i].op(op_code.y, concerned_reg);
 	  break;
 	}
       i++;
