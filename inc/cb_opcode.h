@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Jul 12 19:11:04 2017 Arthur Josso
-** Last update Thu Jul 13 18:04:18 2017 Arthur Josso
+** Last update Thu Jul 13 18:25:38 2017 Arthur Josso
 */
 
 #pragma once
@@ -36,5 +36,17 @@ typedef struct
 {
   uint8_t	x;
   uint8_t	y;
-  void		(*op)(uint8_t type, t_parameter *concerned_reg);
+  void		(*op)(uint8_t, t_parameter*);
 } t_cb_func_desc;
+
+typedef enum
+  {
+    CB_RLC = 0,
+    CB_RRC,
+    CB_RL,
+    CB_RR,
+    CB_SLA,
+    CB_SRA,
+    CB_SWAP,
+    CB_SRL
+  } t_cb_shift_op;
