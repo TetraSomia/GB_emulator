@@ -5,16 +5,16 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Thu Jul 13 21:00:28 2017 Arthur Josso
+## Last update Sun Jul 16 22:25:50 2017 Arthur Josso
 ##
 
-CC	=	gcc -g
+CC	=	gcc
 
 NAME	=	GB_emulator
 
 INC	=	./inc/
 
-CFLAGS	+=	-I$(INC) -Wall -W -Wextra
+CFLAGS	+=	-I$(INC) -Wall -W -Wextra -g
 
 LDFLAGS	+=
 
@@ -35,7 +35,9 @@ SRC	=	$(S_ROOT)main.c 	\
 		$(S_INST)alu.c		\
 		$(S_INST)cb_prefix.c	\
 		$(S_INST)misc.c		\
-		$(S_INST)rotation.c
+		$(S_INST)rotation.c	\
+		$(S_INST)jump.c		\
+		$(S_INST)condition.c
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -2,8 +2,6 @@
 - cb funcs : manual cycles adder (see comment)
 
 - implement z80 instructions :
-  Misc (no swap)
-  Rot and Shift (no CB..)
   Jumps
   Calls
   Restart

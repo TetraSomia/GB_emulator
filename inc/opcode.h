@@ -5,13 +5,14 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Thu Jul 13 20:55:54 2017 Arthur Josso
+** Last update Sun Jul 16 22:26:11 2017 Arthur Josso
 */
 
 #pragma once
 
 #include <stddef.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 /*
 ** Instruction descriptor structures
@@ -78,6 +79,21 @@ extern const t_instruction	inst_tab[];
 #define IS_16_PARAM(p)	(p->type & 1)
 #define IS_8_PARAM(p)	(!IS_16_PARAM(p))
 #define PARAM_SIZE(p)	(IS_16_PARAM(p) ? 16 : 8)
+
+/*
+** Instruction Condition
+*/
+
+typedef enum
+  {
+    CONDITION_NONE,
+    CONDITION_NZ,
+    CONDITION_Z,
+    CONDITION_NC,
+    CONDITION_C
+  } t_inst_condition;
+
+bool	is_inst_exec_on_condition(t_inst_condition cond);
 
 /*
 ** Accessors with parameters

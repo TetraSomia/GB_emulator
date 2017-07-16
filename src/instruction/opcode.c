@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Thu Jul 13 20:51:04 2017 Arthur Josso
+** Last update Sun Jul 16 22:31:16 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -226,33 +226,33 @@ const t_instruction	inst_tab[] =
 
     // ALU : Incrementation & Decrementation
 
-    {0x3C, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_INC, "INC A"},
-    {0x04, 1, 1, {P_REG_8(B), P_REG_8(B)}, inst_INC, "INC B"},
-    {0x0C, 1, 1, {P_REG_8(C), P_REG_8(C)}, inst_INC, "INC C"},
-    {0x14, 1, 1, {P_REG_8(D), P_REG_8(D)}, inst_INC, "INC D"},
-    {0x1C, 1, 1, {P_REG_8(E), P_REG_8(E)}, inst_INC, "INC E"},
-    {0x24, 1, 1, {P_REG_8(H), P_REG_8(H)}, inst_INC, "INC H"},
-    {0x2C, 1, 1, {P_REG_8(L), P_REG_8(L)}, inst_INC, "INC L"},
-    {0x34, 3, 1, {P_IREG_8(HL), P_IREG_8(HL)}, inst_INC, "INC (HL)"},
+    {0x3C, 1, 1, {P_REG_8(A)}, inst_INC, "INC A"},
+    {0x04, 1, 1, {P_REG_8(B)}, inst_INC, "INC B"},
+    {0x0C, 1, 1, {P_REG_8(C)}, inst_INC, "INC C"},
+    {0x14, 1, 1, {P_REG_8(D)}, inst_INC, "INC D"},
+    {0x1C, 1, 1, {P_REG_8(E)}, inst_INC, "INC E"},
+    {0x24, 1, 1, {P_REG_8(H)}, inst_INC, "INC H"},
+    {0x2C, 1, 1, {P_REG_8(L)}, inst_INC, "INC L"},
+    {0x34, 3, 1, {P_IREG_8(HL)}, inst_INC, "INC (HL)"},
 
-    {0x03, 2, 1, {P_REG_16(BC), P_REG_16(BC)}, inst_INC, "INC BC"},
-    {0x13, 2, 1, {P_REG_16(DE), P_REG_16(DE)}, inst_INC, "INC DE"},
-    {0x23, 2, 1, {P_REG_16(HL), P_REG_16(HL)}, inst_INC, "INC HL"},
-    {0x33, 2, 1, {P_REG_16(SP), P_REG_16(SP)}, inst_INC, "INC SP"},
+    {0x03, 2, 1, {P_REG_16(BC)}, inst_INC, "INC BC"},
+    {0x13, 2, 1, {P_REG_16(DE)}, inst_INC, "INC DE"},
+    {0x23, 2, 1, {P_REG_16(HL)}, inst_INC, "INC HL"},
+    {0x33, 2, 1, {P_REG_16(SP)}, inst_INC, "INC SP"},
 
-    {0x3D, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_DEC, "DEC A"},
-    {0x05, 1, 1, {P_REG_8(B), P_REG_8(B)}, inst_DEC, "DEC B"},
-    {0x0D, 1, 1, {P_REG_8(C), P_REG_8(C)}, inst_DEC, "DEC C"},
-    {0x15, 1, 1, {P_REG_8(D), P_REG_8(D)}, inst_DEC, "DEC D"},
-    {0x1D, 1, 1, {P_REG_8(E), P_REG_8(E)}, inst_DEC, "DEC E"},
-    {0x25, 1, 1, {P_REG_8(H), P_REG_8(H)}, inst_DEC, "DEC H"},
-    {0x2D, 1, 1, {P_REG_8(L), P_REG_8(L)}, inst_DEC, "DEC L"},
-    {0x35, 3, 1, {P_IREG_8(HL), P_IREG_8(HL)}, inst_DEC, "DEC (HL)"},
+    {0x3D, 1, 1, {P_REG_8(A)}, inst_DEC, "DEC A"},
+    {0x05, 1, 1, {P_REG_8(B)}, inst_DEC, "DEC B"},
+    {0x0D, 1, 1, {P_REG_8(C)}, inst_DEC, "DEC C"},
+    {0x15, 1, 1, {P_REG_8(D)}, inst_DEC, "DEC D"},
+    {0x1D, 1, 1, {P_REG_8(E)}, inst_DEC, "DEC E"},
+    {0x25, 1, 1, {P_REG_8(H)}, inst_DEC, "DEC H"},
+    {0x2D, 1, 1, {P_REG_8(L)}, inst_DEC, "DEC L"},
+    {0x35, 3, 1, {P_IREG_8(HL)}, inst_DEC, "DEC (HL)"},
 
-    {0x0B, 2, 1, {P_REG_16(BC), P_REG_16(BC)}, inst_DEC, "DEC BC"},
-    {0x1B, 2, 1, {P_REG_16(DE), P_REG_16(DE)}, inst_DEC, "DEC DE"},
-    {0x2B, 2, 1, {P_REG_16(HL), P_REG_16(HL)}, inst_DEC, "DEC HL"},
-    {0x3B, 2, 1, {P_REG_16(SP), P_REG_16(SP)}, inst_DEC, "DEC SP"},
+    {0x0B, 2, 1, {P_REG_16(BC)}, inst_DEC, "DEC BC"},
+    {0x1B, 2, 1, {P_REG_16(DE)}, inst_DEC, "DEC DE"},
+    {0x2B, 2, 1, {P_REG_16(HL)}, inst_DEC, "DEC HL"},
+    {0x3B, 2, 1, {P_REG_16(SP)}, inst_DEC, "DEC SP"},
 
     //ALU : Compare
 
@@ -268,26 +268,35 @@ const t_instruction	inst_tab[] =
 
     // Rotation
 
-    {0x07, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_RLC, "RLC A"},
-    {0x17, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_RL, "RL A"},
-    {0x0F, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_RRC, "RRC A"},
-    {0x1F, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_RR, "RR A"},
+    {0x07, 1, 1, {P_REG_8(A)}, inst_RLC, "RLC A"},
+    {0x17, 1, 1, {P_REG_8(A)}, inst_RL, "RL A"},
+    {0x0F, 1, 1, {P_REG_8(A)}, inst_RRC, "RRC A"},
+    {0x1F, 1, 1, {P_REG_8(A)}, inst_RR, "RR A"},
+
+    // Jumps
+
+    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_NONE)}, inst_JP, "JP nn"},
+    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_NZ)}, inst_JP, "JP NZ, nn"},
+    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_Z)}, inst_JP, "JP Z, nn"},
+    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_NC)}, inst_JP, "JP NC, nn"},
+    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_C)}, inst_JP, "JP C, nn"},
+    {0xC3, 3, 3, {P_IREG_8(HL), P_RAW(CONDITION_NONE)}, inst_JP, "JP (HL)"},
 
     // Misc
 
-    {0x27, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_DAA, "DAA"},
-    {0x2F, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_CPL, "CPL"},
-    {0x3F, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_CCF, "CCF"},
-    {0x37, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_SCF, "SCF"},
+    {0x27, 1, 1, {P_REG_8(A)}, inst_DAA, "DAA"},
+    {0x2F, 1, 1, {P_REG_8(A)}, inst_CPL, "CPL"},
+    {0x3F, 1, 1, {}, inst_CCF, "CCF"},
+    {0x37, 1, 1, {}, inst_SCF, "SCF"},
 
-    {0x00, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_NOP, "NOP"},
-    {0x76, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_NOP, "HALT"},
-    {0x10, 1, 2, {P_REG_8(A), P_REG_8(A)}, inst_NOP, "STOP"},
+    {0x00, 1, 1, {}, inst_NOP, "NOP"},
+    {0x76, 1, 1, {}, inst_NOP, "HALT"},
+    {0x10, 1, 2, {}, inst_NOP, "STOP"},
 
-    {0xF3, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_DI, "DI"},
-    {0xFB, 1, 1, {P_REG_8(A), P_REG_8(A)}, inst_EI, "EI"},
+    {0xF3, 1, 1, {}, inst_DI, "DI"},
+    {0xFB, 1, 1, {}, inst_EI, "EI"},
 
     // CB prefixed instructions
 
-    {0xCB, CUSTOM_NB_CYCLES, 2, {P_VAL_8, P_VAL_8}, inst_CB_prefix, "CB prefix"},
+    {0xCB, 0, 2, {P_VAL_8}, inst_CB_prefix, "CB prefixed op"},
   };
