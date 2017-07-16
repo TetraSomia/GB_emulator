@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Sun Jul 16 22:37:02 2017 Arthur Josso
+** Last update Sun Jul 16 23:22:07 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -287,6 +287,35 @@ const t_instruction	inst_tab[] =
     {0x28, 2, 0, {P_VAL_8, P_RAW(CONDITION_Z)}, inst_JR, "JR Z, n"},
     {0x30, 2, 0, {P_VAL_8, P_RAW(CONDITION_NC)}, inst_JR, "JR NC, n"},
     {0x38, 2, 0, {P_VAL_8, P_RAW(CONDITION_C)}, inst_JR, "JR C, n"},
+
+    // Calls
+
+    {0xCD, 3, 0, {P_VAL_16, P_RAW(CONDITION_NONE)}, inst_CALL, "CALL nn"},
+    {0xC4, 3, 0, {P_VAL_16, P_RAW(CONDITION_NZ)}, inst_CALL, "CALL NZ, nn"},
+    {0xCC, 3, 0, {P_VAL_16, P_RAW(CONDITION_Z)}, inst_CALL, "CALL Z, nn"},
+    {0xD4, 3, 0, {P_VAL_16, P_RAW(CONDITION_NC)}, inst_CALL, "CALL NC, nn"},
+    {0xDC, 3, 0, {P_VAL_16, P_RAW(CONDITION_C)}, inst_CALL, "CALL C, nn"},
+
+    // Restarts
+
+    {0xC7, 8, 0, {P_RAW(0x00), P_RAW(CONDITION_NONE)}, inst_RST, "RST 00H"},
+    {0xCF, 8, 0, {P_RAW(0x08), P_RAW(CONDITION_NONE)}, inst_RST, "RST 08H"},
+    {0xD7, 8, 0, {P_RAW(0x10), P_RAW(CONDITION_NONE)}, inst_RST, "RST 10H"},
+    {0xDF, 8, 0, {P_RAW(0x18), P_RAW(CONDITION_NONE)}, inst_RST, "RST 18H"},
+    {0xE7, 8, 0, {P_RAW(0x20), P_RAW(CONDITION_NONE)}, inst_RST, "RST 20H"},
+    {0xEF, 8, 0, {P_RAW(0x28), P_RAW(CONDITION_NONE)}, inst_RST, "RST 28H"},
+    {0xF7, 8, 0, {P_RAW(0x30), P_RAW(CONDITION_NONE)}, inst_RST, "RST 30H"},
+    {0xFF, 8, 0, {P_RAW(0x38), P_RAW(CONDITION_NONE)}, inst_RST, "RST 38H"},
+
+    // Returns
+
+    {0xC9, 2, 0, {P_IREG_16(SP), P_RAW(CONDITION_NONE)}, inst_RET, "RET"},
+    {0xC0, 2, 0, {P_IREG_16(SP), P_RAW(CONDITION_NZ)}, inst_RET, "RET NZ"},
+    {0xC8, 2, 0, {P_IREG_16(SP), P_RAW(CONDITION_Z)}, inst_RET, "RET Z"},
+    {0xD0, 2, 0, {P_IREG_16(SP), P_RAW(CONDITION_NC)}, inst_RET, "RET NC"},
+    {0xD8, 2, 0, {P_IREG_16(SP), P_RAW(CONDITION_C)}, inst_RET, "RET C"},
+
+    {0xD9, 2, 0, {P_IREG_16(SP), P_RAW(CONDITION_NONE)}, inst_RETI, "RETI"},
 
     // Misc
 

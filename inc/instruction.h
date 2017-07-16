@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Sun Jul 16 22:25:07 2017 Arthur Josso
+** Last update Sun Jul 16 23:09:04 2017 Arthur Josso
 */
 
 #pragma once
@@ -42,6 +42,10 @@ void inst_SRL(t_parameter *param);
 
 void inst_JP(t_parameter *param);
 void inst_JR(t_parameter *param);
+void inst_CALL(t_parameter *param);
+void inst_RST(t_parameter *param);
+void inst_RET(t_parameter *param);
+void inst_RETI(t_parameter *param);
 
 void inst_DAA(t_parameter *param);
 void inst_CPL(t_parameter *param);

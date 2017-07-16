@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Jul  9 21:32:15 2017 Arthur Josso
-** Last update Sun Jul  9 21:38:34 2017 Arthur Josso
+** Last update Sun Jul 16 23:16:18 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -39,6 +39,9 @@ void	set_param_value(t_parameter *param, uint16_t value)
       break;
     case IVAL_16:
       set_word(get_word(reg.PC + 2), value);
+      break;
+    case RAW:
+      param->raw = value;
       break;
     default:
       emu_warn("set_param_value", "Unknown parameter type");

@@ -11,3 +11,8 @@ SHOULD NOT BE A PROBLEM :
 USELESS :
 
 - ...
+
+MAN ERROR ? :
+
+- RST instruction should push actual address on stack, but I push next inst addr
+

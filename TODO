@@ -2,7 +2,6 @@
 - cb funcs : manual cycles adder (see comment)
 
 - implement z80 instructions :
-  Jumps
   Calls
   Restart
   Returns
