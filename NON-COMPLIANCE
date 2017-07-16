@@ -14,5 +14,4 @@ USELESS :
 
 MAN ERROR ? :
 
-- RST instruction should push actual address on stack, but I push next inst addr
-
+- RST instruction should push actual address on stack, but I push next inst addr instead
