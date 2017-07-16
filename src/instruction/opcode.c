@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Sun Jul 16 22:31:16 2017 Arthur Josso
+** Last update Sun Jul 16 22:37:02 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -275,12 +275,18 @@ const t_instruction	inst_tab[] =
 
     // Jumps
 
-    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_NONE)}, inst_JP, "JP nn"},
-    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_NZ)}, inst_JP, "JP NZ, nn"},
-    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_Z)}, inst_JP, "JP Z, nn"},
-    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_NC)}, inst_JP, "JP NC, nn"},
-    {0xC3, 3, 3, {P_VAL_16, P_RAW(CONDITION_C)}, inst_JP, "JP C, nn"},
-    {0xC3, 3, 3, {P_IREG_8(HL), P_RAW(CONDITION_NONE)}, inst_JP, "JP (HL)"},
+    {0xC3, 3, 0, {P_VAL_16, P_RAW(CONDITION_NONE)}, inst_JP, "JP nn"},
+    {0xC2, 3, 0, {P_VAL_16, P_RAW(CONDITION_NZ)}, inst_JP, "JP NZ, nn"},
+    {0xCA, 3, 0, {P_VAL_16, P_RAW(CONDITION_Z)}, inst_JP, "JP Z, nn"},
+    {0xD2, 3, 0, {P_VAL_16, P_RAW(CONDITION_NC)}, inst_JP, "JP NC, nn"},
+    {0xDA, 3, 0, {P_VAL_16, P_RAW(CONDITION_C)}, inst_JP, "JP C, nn"},
+    {0xE9, 1, 0, {P_IREG_8(HL), P_RAW(CONDITION_NONE)}, inst_JP, "JP (HL)"},
+
+    {0x18, 2, 0, {P_VAL_8, P_RAW(CONDITION_NONE)}, inst_JR, "JR n"},
+    {0x20, 2, 0, {P_VAL_8, P_RAW(CONDITION_NZ)}, inst_JR, "JR NZ, n"},
+    {0x28, 2, 0, {P_VAL_8, P_RAW(CONDITION_Z)}, inst_JR, "JR Z, n"},
+    {0x30, 2, 0, {P_VAL_8, P_RAW(CONDITION_NC)}, inst_JR, "JR NC, n"},
+    {0x38, 2, 0, {P_VAL_8, P_RAW(CONDITION_C)}, inst_JR, "JR C, n"},
 
     // Misc
 
