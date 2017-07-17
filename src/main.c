@@ -5,12 +5,22 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar  4 13:34:04 2017 Arthur Josso
-** Last update Sun Mar 12 00:23:35 2017 Arthur Josso
+** Last update Tue Jul 18 01:30:04 2017 Arthur Josso
 */
 
+#include <stdlib.h>
 #include <stdio.h>
-#include "memory.h"
-#include "opcode.h"
+#include <signal.h>
+#include "core.h"
+
+static void	sig_handler(int sig)
+{
+  if (sig == SIGINT)
+    {
+      fprintf(stderr, "\nClosing Emulator...\n");
+      exit(0);
+    }
+}
 
 static int	usage(const char *binary)
 {
@@ -22,9 +32,11 @@ int	main(int ac, char **av)
 {
   if (ac != 2)
     return (usage(av[0]));
+  atexit(&free_memory);
+  signal(SIGINT, &sig_handler);
   init_memory();
   if (dump_file(av[1]) == false)
     return (1);
-  free_memory();
+  emu_run();
   return (0);
 }

@@ -5,10 +5,10 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Jul 12 19:55:12 2017 Arthur Josso
-** Last update Thu Jul 13 21:01:33 2017 Arthur Josso
+** Last update Tue Jul 18 00:52:45 2017 Arthur Josso
 */
 
-#include "memory.h"
+#include "core.h"
 #include "opcode.h"
 #include "cb_opcode.h"
 #include "instruction.h"
@@ -114,5 +114,5 @@ void		inst_CB_prefix(t_parameter *param)
 	}
       i++;
     }
-  // add_clock_cycles(concerned_reg->type == IREG_8 ? 4 : 2);
+  emu_add_clock_cycles(concerned_reg->type == IREG_8 ? 4 : 2);
 }

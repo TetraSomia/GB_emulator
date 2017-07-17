@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Jul  9 21:32:15 2017 Arthur Josso
-** Last update Sun Jul 16 23:16:18 2017 Arthur Josso
+** Last update Tue Jul 18 01:38:05 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -32,13 +32,13 @@ void	set_param_value(t_parameter *param, uint16_t value)
       set_byte(reg.PC + 1, value);
       break;
     case VAL_16:
-      set_word(reg.PC + 2, value);
+      set_word(reg.PC + 1, value);
       break;
     case IVAL_8:
-      set_byte(get_word(reg.PC + 2), value);
+      set_byte(get_word(reg.PC + 1), value);
       break;
     case IVAL_16:
-      set_word(get_word(reg.PC + 2), value);
+      set_word(get_word(reg.PC + 1), value);
       break;
     case RAW:
       param->raw = value;
@@ -64,11 +64,11 @@ uint16_t	get_param_value(t_parameter *param)
     case VAL_8:
       return (get_byte(reg.PC + 1));
     case VAL_16:
-      return (get_word(reg.PC + 2));
+      return (get_word(reg.PC + 1));
     case IVAL_8:
-      return (get_byte(get_word(reg.PC + 2)));
+      return (get_byte(get_word(reg.PC + 1)));
     case IVAL_16:
-      return (get_word(get_word(reg.PC + 2)));
+      return (get_word(get_word(reg.PC + 1)));
     case RAW:
       return (param->raw);
     default:

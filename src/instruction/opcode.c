@@ -5,14 +5,15 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Sun Jul 16 23:22:07 2017 Arthur Josso
+** Last update Tue Jul 18 01:13:34 2017 Arthur Josso
 */
 
 #include "memory.h"
 #include "instruction.h"
 #include "opcode.h"
+#include "misc.h"
 
-const t_instruction	inst_tab[] =
+static const t_instruction	inst_tab[] =
   {
     // LD
 
@@ -334,4 +335,25 @@ const t_instruction	inst_tab[] =
     // CB prefixed instructions
 
     {0xCB, 0, 2, {P_VAL_8}, inst_CB_prefix, "CB prefixed op"},
+
+    // END
+
+    {0, 0, 0, {}, NULL, NULL}
   };
+
+const t_instruction	**instructions;
+
+void	init_instructions()
+{
+  int	i;
+
+  instructions = xalloc(sizeof(t_instruction*) * 0x100);
+  i = 0;
+  while (inst_tab[i].func)
+    {
+      if (instructions[inst_tab[i].opcode] != NULL)
+	emu_warn("init_instructions", "Opcode collision");
+      instructions[inst_tab[i].opcode] = inst_tab + i;
+      i++;
+    }
+}

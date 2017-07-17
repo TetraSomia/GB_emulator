@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 12:55:18 2017 Arthur Josso
-** Last update Thu Jul 13 20:35:59 2017 Arthur Josso
+** Last update Tue Jul 18 01:08:38 2017 Arthur Josso
 */
 
 #pragma once
@@ -96,15 +96,16 @@ extern t_registers	reg;
 ** Accessers
 */
 
+#define ACT_OPCODE	(mem->raw[reg.PC])
+
 uint8_t		get_byte(uint16_t addr);
 uint16_t	get_word(uint16_t addr);
 void		set_byte(uint16_t addr, uint8_t value);
 void		set_word(uint16_t addr, uint16_t value);
 
 /*
-** Misc functions
+** Core functions
 */
 
 void            init_memory();
 void		free_memory();
-bool            dump_file(const char *path);

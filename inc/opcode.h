@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Sun Jul 16 22:26:11 2017 Arthur Josso
+** Last update Tue Jul 18 01:13:50 2017 Arthur Josso
 */
 
 #pragma once
@@ -53,10 +53,18 @@ typedef struct
 } t_instruction;
 
 /*
+** Global setter
+*/
+
+extern const t_instruction	**instructions;
+
+void	init_instructions();
+
+/*
 ** Array of instructions
 */
 
-extern const t_instruction	inst_tab[];
+//extern const t_instruction	inst_tab[];
 
 /*
 ** Parameter simplifier

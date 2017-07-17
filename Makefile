@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Sun Jul 16 22:25:50 2017 Arthur Josso
+## Last update Tue Jul 18 00:32:26 2017 Arthur Josso
 ##
 
 CC	=	gcc
@@ -24,6 +24,8 @@ S_ACCES	=	$(S_ROOT)accessor/
 
 S_INST	=	$(S_ROOT)instruction/
 
+S_RUN	=	$(S_ROOT)run/
+
 SRC	=	$(S_ROOT)main.c 	\
 		$(S_ROOT)memory.c 	\
 		$(S_ROOT)misc.c 	\
@@ -37,7 +39,8 @@ SRC	=	$(S_ROOT)main.c 	\
 		$(S_INST)misc.c		\
 		$(S_INST)rotation.c	\
 		$(S_INST)jump.c		\
-		$(S_INST)condition.c
+		$(S_INST)condition.c	\
+		$(S_RUN)core.c
 
 OBJ	=	$(SRC:.c=.o)
 
