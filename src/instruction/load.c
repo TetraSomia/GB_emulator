@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:14 2017 Arthur Josso
-** Last update Tue Jul 11 00:06:52 2017 Arthur Josso
+** Last update Tue Jul 18 18:36:48 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -19,10 +19,9 @@ void	inst_LD(t_parameter *param)
 void	inst_LDH(t_parameter *param)
 {
   if (param[0].addr == &reg.A)
-    set_param_value(param, get_byte(get_param_value(param) + 0xFF00));
+    set_param_value(param, get_byte(get_param_value(param + 1) + 0xFF00));
   else
-    set_byte(get_byte(get_param_value(param) + 0xFF00),
-	     get_param_value(param + 1));
+    set_byte(get_param_value(param) + 0xFF00, get_param_value(param + 1));
 }
 
 void    inst_LDD(t_parameter *param)

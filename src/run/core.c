@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Tue Jul 18 00:28:52 2017 Arthur Josso
-** Last update Tue Jul 18 01:39:28 2017 Arthur Josso
+** Last update Tue Jul 18 18:56:46 2017 Arthur Josso
 */
 
 #include <unistd.h>
@@ -40,7 +40,7 @@ bool			emu_run()
       printf("%s\n", act_inst->desc);
       act_inst->func((t_parameter*)act_inst->param);
       reg.PC += act_inst->byte_size;
-      usleep(10000);
+      usleep(1000);
     }
   return (true);
 }

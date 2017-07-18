@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Tue Jul 18 01:13:34 2017 Arthur Josso
+** Last update Tue Jul 18 18:03:29 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -283,11 +283,11 @@ static const t_instruction	inst_tab[] =
     {0xDA, 3, 0, {P_VAL_16, P_RAW(CONDITION_C)}, inst_JP, "JP C, nn"},
     {0xE9, 1, 0, {P_IREG_8(HL), P_RAW(CONDITION_NONE)}, inst_JP, "JP (HL)"},
 
-    {0x18, 2, 0, {P_VAL_8, P_RAW(CONDITION_NONE)}, inst_JR, "JR n"},
-    {0x20, 2, 0, {P_VAL_8, P_RAW(CONDITION_NZ)}, inst_JR, "JR NZ, n"},
-    {0x28, 2, 0, {P_VAL_8, P_RAW(CONDITION_Z)}, inst_JR, "JR Z, n"},
-    {0x30, 2, 0, {P_VAL_8, P_RAW(CONDITION_NC)}, inst_JR, "JR NC, n"},
-    {0x38, 2, 0, {P_VAL_8, P_RAW(CONDITION_C)}, inst_JR, "JR C, n"},
+    {0x18, 2, 2, {P_VAL_8, P_RAW(CONDITION_NONE)}, inst_JR, "JR n"},
+    {0x20, 2, 2, {P_VAL_8, P_RAW(CONDITION_NZ)}, inst_JR, "JR NZ, n"},
+    {0x28, 2, 2, {P_VAL_8, P_RAW(CONDITION_Z)}, inst_JR, "JR Z, n"},
+    {0x30, 2, 2, {P_VAL_8, P_RAW(CONDITION_NC)}, inst_JR, "JR NC, n"},
+    {0x38, 2, 2, {P_VAL_8, P_RAW(CONDITION_C)}, inst_JR, "JR C, n"},
 
     // Calls
 
