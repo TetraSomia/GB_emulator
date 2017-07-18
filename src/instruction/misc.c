@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Thu Jul 13 20:03:27 2017 Arthur Josso
-** Last update Tue Jul 18 21:08:40 2017 Arthur Josso
+** Last update Tue Jul 18 21:14:04 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -68,7 +68,7 @@ void	inst_HALT(t_parameter *param)
   if (GET_FLAG(FLAG_I))
     (void)param; //stop execution and wait for interruption
   else
-    reg.PC++;
+    (void)param; // duplicate next opcode
 }
 
 void	inst_EI(t_parameter *param)
