@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:42:01 2017 Arthur Josso
-** Last update Sun Jul 16 23:09:04 2017 Arthur Josso
+** Last update Tue Jul 18 21:07:17 2017 Arthur Josso
 */
 
 #pragma once
@@ -52,6 +52,7 @@ void inst_CPL(t_parameter *param);
 void inst_CCF(t_parameter *param);
 void inst_SCF(t_parameter *param);
 void inst_NOP(t_parameter *param);
+void inst_HALT(t_parameter *param);
 void inst_EI(t_parameter *param);
 void inst_DI(t_parameter *param);
 

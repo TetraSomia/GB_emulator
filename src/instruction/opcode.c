@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Tue Jul 18 18:03:29 2017 Arthur Josso
+** Last update Tue Jul 18 21:07:39 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -326,7 +326,7 @@ static const t_instruction	inst_tab[] =
     {0x37, 1, 1, {}, inst_SCF, "SCF"},
 
     {0x00, 1, 1, {}, inst_NOP, "NOP"},
-    {0x76, 1, 1, {}, inst_NOP, "HALT"},
+    {0x76, 1, 1, {}, inst_HALT, "HALT"},
     {0x10, 1, 2, {}, inst_NOP, "STOP"},
 
     {0xF3, 1, 1, {}, inst_DI, "DI"},
