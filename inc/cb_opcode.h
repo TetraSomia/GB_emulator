@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Jul 12 19:11:04 2017 Arthur Josso
-** Last update Thu Jul 13 21:00:37 2017 Arthur Josso
+** Last update Mon Jul 24 00:01:12 2017 Arthur Josso
 */
 
 #pragma once
@@ -38,3 +38,5 @@ typedef struct
   uint8_t	y;
   void		(*op)(uint8_t, t_parameter*);
 } t_cb_func_desc;
+
+uint8_t	get_last_cb_inst_cycles();

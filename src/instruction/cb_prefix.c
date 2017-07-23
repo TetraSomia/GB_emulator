@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Jul 12 19:55:12 2017 Arthur Josso
-** Last update Tue Jul 18 00:52:45 2017 Arthur Josso
+** Last update Mon Jul 24 00:00:37 2017 Arthur Josso
 */
 
 #include "core.h"
@@ -95,6 +95,8 @@ static t_parameter regs_by_id[] =
     P_REG_8(A),
   };
 
+static uint8_t	cb_inst_cycles = 0;
+
 void		inst_CB_prefix(t_parameter *param)
 {
   t_cb_byte	op_code;
@@ -114,5 +116,10 @@ void		inst_CB_prefix(t_parameter *param)
 	}
       i++;
     }
-  emu_add_clock_cycles(concerned_reg->type == IREG_8 ? 4 : 2);
+  cb_inst_cycles = concerned_reg->type == IREG_8 ? 4 : 2;
+}
+
+uint8_t	get_last_cb_inst_cycles()
+{
+  return (cb_inst_cycles);
 }

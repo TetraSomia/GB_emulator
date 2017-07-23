@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Tue Jul 18 21:07:39 2017 Arthur Josso
+** Last update Sun Jul 23 23:55:10 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -341,7 +341,7 @@ static const t_instruction	inst_tab[] =
     {0, 0, 0, {}, NULL, NULL}
   };
 
-const t_instruction	**instructions;
+const t_instruction	**instructions = NULL;
 
 void	init_instructions()
 {

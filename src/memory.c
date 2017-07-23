@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 17:55:47 2017 Arthur Josso
-** Last update Tue Jul 18 18:56:42 2017 Arthur Josso
+** Last update Sun Jul 23 23:54:37 2017 Arthur Josso
 */
 
 #include <sys/types.h>
@@ -17,7 +17,7 @@
 #include "opcode.h"
 #include "misc.h"
 
-t_memory	*mem;
+t_memory	*mem = NULL;
 t_registers	reg;
 
 void		init_memory()
@@ -67,8 +67,10 @@ void		init_memory()
 
 void		free_memory()
 {
-  free(mem);
-  free(instructions);
+  if (mem)
+    free(mem);
+  if (instructions)
+    free(instructions);
 }
 
 bool		dump_file(const char *path)

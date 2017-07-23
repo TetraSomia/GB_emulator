@@ -1,4 +1,5 @@
 HALT inst
-interruption
-video
+interruptions
+screen
+inputs
 sound
