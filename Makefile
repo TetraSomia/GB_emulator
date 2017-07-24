@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Mon Jul 24 00:58:34 2017 Arthur Josso
+## Last update Mon Jul 24 23:18:08 2017 Arthur Josso
 ##
 
 CC	=	gcc
@@ -28,6 +28,8 @@ S_RUN	=	$(S_ROOT)run/
 
 S_INT	=	$(S_ROOT)interrupt/
 
+S_SCR	=	$(S_ROOT)screen/
+
 SRC	=	$(S_ROOT)main.c 	\
 		$(S_ROOT)memory.c 	\
 		$(S_ROOT)misc.c 	\
@@ -47,7 +49,8 @@ SRC	=	$(S_ROOT)main.c 	\
 		$(S_INT)lcdc.c		\
 		$(S_INT)timer.c		\
 		$(S_INT)serial_io.c	\
-		$(S_INT)pin_trans.c
+		$(S_INT)pin_trans.c	\
+		$(S_SCR)refresh.c
 
 OBJ	=	$(SRC:.c=.o)
 

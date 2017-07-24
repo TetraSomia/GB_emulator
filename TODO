@@ -1,5 +1,7 @@
 HALT inst
 interruptions
+RO and reset locations
 screen
+frame limit
 inputs
 sound
