@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:17:00 2017 Arthur Josso
-** Last update Tue Jul 25 00:35:52 2017 Arthur Josso
+** Last update Tue Jul 25 02:04:21 2017 Arthur Josso
 */
 
 #pragma once
@@ -33,6 +33,8 @@ typedef struct
   uint32_t		clock;
   t_screen_state	state;
   uint8_t		line;
-} t_screen_data;
+} t_screen;
+
+extern t_screen	screen;
 
 void refresh_screen_state(uint8_t elapsed_cycles);

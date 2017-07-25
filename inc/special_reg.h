@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 **
 ** Started on  Tue Jul 25 00:05:05 2017 Arthur Josso
-** Last update Tue Jul 25 00:36:26 2017 Arthur Josso
+** Last update Tue Jul 25 01:25:29 2017 Arthur Josso
 */
 
 #pragma once
@@ -15,6 +15,7 @@ typedef enum
     REG_TIMA = 0xFF05,
     REG_TMA = 0xFF06,
     REG_TAC = 0xFF07,
+    REG_IF = 0xFF0F,
     REG_NR10 = 0xFF10,
     REG_NR11 = 0xFF11,
     REG_NR12 = 0xFF12,

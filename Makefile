@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Mon Jul 24 23:18:08 2017 Arthur Josso
+## Last update Tue Jul 25 01:23:18 2017 Arthur Josso
 ##
 
 CC	=	gcc
@@ -45,6 +45,7 @@ SRC	=	$(S_ROOT)main.c 	\
 		$(S_INST)jump.c		\
 		$(S_INST)condition.c	\
 		$(S_RUN)core.c		\
+		$(S_INT)core.c		\
 		$(S_INT)vblank.c	\
 		$(S_INT)lcdc.c		\
 		$(S_INT)timer.c		\

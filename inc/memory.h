@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 12:55:18 2017 Arthur Josso
-** Last update Tue Jul 18 01:08:38 2017 Arthur Josso
+** Last update Tue Jul 25 01:05:37 2017 Arthur Josso
 */
 
 #pragma once
@@ -34,6 +34,10 @@ typedef struct
 ** Flag Management
 */
 
+#define SET_BIT(byte, bit)	(byte |= 1 << bit)
+#define RESET_BIT(byte, bit)	(byte &= ~(1 << bit))
+#define GET_BIT(byte, bit)	((byte >> bit) & 1)
+
 typedef enum 
   {
     FLAG_I = 0,
@@ -46,9 +50,9 @@ typedef enum
     FLAG_Z
   } t_flag_bit;
 
-#define SET_FLAG(f)	(reg.flags |= 1 << f)
-#define RESET_FLAG(f)	(reg.flags &= ~(1 << f))
-#define GET_FLAG(f)	((reg.flags >> f) & 1)
+#define SET_FLAG(f)	SET_BIT(reg.flags, f)
+#define RESET_FLAG(f)	RESET_BIT(reg.flags, f)
+#define GET_FLAG(f)	GET_BIT(reg.flags, f)
 
 #define CONDITION_FLAG(f, c)	((c) ? SET_FLAG(f) : RESET_FLAG(f))
 

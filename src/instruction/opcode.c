@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Sun Jul 23 23:55:10 2017 Arthur Josso
+** Last update Tue Jul 25 02:54:11 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -17,7 +17,7 @@ static const t_instruction	inst_tab[] =
   {
     // LD
 
-    {0x3E, 2, 2, {P_REG_8(B), P_VAL_8}, inst_LD, "LD A, #"},
+    {0x3E, 2, 2, {P_REG_8(A), P_VAL_8}, inst_LD, "LD A, n"},
     {0x06, 2, 2, {P_REG_8(B), P_VAL_8}, inst_LD, "LD B, n"},
     {0x0E, 2, 2, {P_REG_8(C), P_VAL_8}, inst_LD, "LD C, n"},
     {0x16, 2, 2, {P_REG_8(D), P_VAL_8}, inst_LD, "LD D, n"},
