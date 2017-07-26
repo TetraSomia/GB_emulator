@@ -5,14 +5,13 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Tue Jul 18 00:28:52 2017 Arthur Josso
-** Last update Wed Jul 26 04:18:08 2017 Arthur Josso
+** Last update Wed Jul 26 16:53:14 2017 Arthur Josso
 */
 
 #include <unistd.h>
-#include "memory.h"
+#include "core.h"
 #include "opcode.h"
 #include "misc.h"
-#include "cb_opcode.h"
 #include "interrupt.h"
 #include "screen.h"
 
@@ -23,7 +22,6 @@
 bool			emu_run()
 {
   const t_instruction	*act_inst;
-  uint8_t		elapsed_cycles;
 
   while (1)
     {
@@ -37,12 +35,8 @@ bool			emu_run()
       act_inst->func((t_parameter*)act_inst->param);
       reg.PC += act_inst->byte_size;
 
-      if (act_inst->opcode == 0xCB)
-	elapsed_cycles = get_last_cb_inst_cycles();
-      else
-	elapsed_cycles = act_inst->nb_cycles;
-      refresh_screen_state(elapsed_cycles);
-      check_for_interrupts(elapsed_cycles);
+      refresh_clock_dependent_regs(act_inst->opcode, act_inst->nb_cycles);
+      check_for_interrupts();
 
       //
       printf("%s\n", act_inst->desc);

@@ -5,13 +5,13 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Jul 16 22:12:28 2017 Arthur Josso
-** Last update Wed Jul 26 04:17:21 2017 Arthur Josso
+** Last update Wed Jul 26 04:20:13 2017 Arthur Josso
 */
 
 #include "opcode.h"
 #include "memory.h"
 #include "instruction.h"
-#include <stdio.h>
+
 void    inst_JP(t_parameter *param)
 {
   if (!is_inst_exec_on_condition(get_param_value(param + 1)))

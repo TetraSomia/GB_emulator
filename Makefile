@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Tue Jul 25 01:23:18 2017 Arthur Josso
+## Last update Wed Jul 26 16:57:52 2017 Arthur Josso
 ##
 
 CC	=	gcc
@@ -30,9 +30,13 @@ S_INT	=	$(S_ROOT)interrupt/
 
 S_SCR	=	$(S_ROOT)screen/
 
+S_MEM	=	$(S_ROOT)memory/
+
 SRC	=	$(S_ROOT)main.c 	\
-		$(S_ROOT)memory.c 	\
 		$(S_ROOT)misc.c 	\
+		$(S_MEM)init.c		\
+		$(S_MEM)dump.c		\
+		$(S_MEM)fini.c		\
 		$(S_ACCES)memory.c	\
 		$(S_ACCES)parameter.c	\
 		$(S_INST)opcode.c	\
@@ -45,6 +49,7 @@ SRC	=	$(S_ROOT)main.c 	\
 		$(S_INST)jump.c		\
 		$(S_INST)condition.c	\
 		$(S_RUN)core.c		\
+		$(S_RUN)refresh_reg.c	\
 		$(S_INT)core.c		\
 		$(S_INT)vblank.c	\
 		$(S_INT)lcdc.c		\

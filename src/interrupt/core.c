@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Tue Jul 25 01:19:04 2017 Arthur Josso
-** Last update Tue Jul 25 03:08:30 2017 Arthur Josso
+** Last update Wed Jul 26 16:47:29 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -28,7 +28,7 @@ static void		execute_interrupt(t_int_type raised_int)
   inst_JP(jmp_params);
 }
 
-void				check_for_interrupts(uint8_t elapsed_cycles)
+void				check_for_interrupts()
 {
   t_int_type                    act_int;
   t_int_type			raised_int;
@@ -46,7 +46,7 @@ void				check_for_interrupts(uint8_t elapsed_cycles)
   act_int = INT_FIRST;
   while (act_int < INT_NBR)
     {
-      is_int_raised = interrupts[act_int](elapsed_cycles);
+      is_int_raised = interrupts[act_int]();
       if (is_int_raised && mem->raw[REG_IF] == 0 &&
 	  GET_FLAG(FLAG_I) && GET_BIT(REG_IE, act_int))
 	{
