@@ -5,12 +5,13 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Jul 26 16:42:38 2017 Arthur Josso
-** Last update Wed Jul 26 16:52:00 2017 Arthur Josso
+** Last update Wed Jul 26 17:58:14 2017 Arthur Josso
 */
 
 #include "opcode.h"
 #include "cb_opcode.h"
 #include "screen.h"
+#include "interrupt.h"
 
 void		refresh_clock_dependent_regs(uint8_t last_opcode,
 					     uint8_t cycles_duration)
@@ -22,4 +23,5 @@ void		refresh_clock_dependent_regs(uint8_t last_opcode,
    else
      elapsed_cycles = cycles_duration;
    refresh_screen_state(elapsed_cycles);
+   refresh_timer_state(elapsed_cycles);
 }
