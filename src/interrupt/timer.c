@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 00:59:04 2017 Arthur Josso
-** Last update Wed Jul 26 17:55:10 2017 Arthur Josso
+** Last update Wed Jul 26 18:25:22 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -16,7 +16,7 @@ static bool	timer_overflow = false;
 
 void			refresh_timer_state(uint8_t elapsed_cycles)
 {
-  static uint32_t	clock = 0;
+  static uint16_t	clock = 0;
   t_spereg_tac * const	tac_reg = (void*)&mem->raw[REG_TAC];
   static const uint16_t	durations[] = {0x100, 0x04, 0x10, 0x40};
 
@@ -44,4 +44,16 @@ bool			interrupt_timer()
       return (true);
     }
   return (false);
+}
+
+void			refresh_divider_state(uint8_t elapsed_cycles)
+{
+  static uint8_t	clock = 0;
+
+  clock += elapsed_cycles;
+  while (clock >= 0x10)
+    {
+      mem->raw[REG_DIV]++;
+      clock -= 0x10;
+    }
 }

@@ -1,5 +1,5 @@
 HALT inst
-interruptions
+interruptions (pin_transition && serial_io)
 RO and reset locations
 screen
 frame limit

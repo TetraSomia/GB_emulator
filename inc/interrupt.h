@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 00:34:06 2017 Arthur Josso
-** Last update Wed Jul 26 17:57:38 2017 Arthur Josso
+** Last update Wed Jul 26 18:15:02 2017 Arthur Josso
 */
 
 #pragma once
@@ -41,3 +41,4 @@ bool interrupt_pin_transition();
 */
 
 void refresh_timer_state(uint8_t elapsed_cycles);
+void refresh_divider_state(uint8_t elapsed_cycles);

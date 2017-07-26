@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Wed Jul 26 16:42:38 2017 Arthur Josso
-** Last update Wed Jul 26 17:58:14 2017 Arthur Josso
+** Last update Wed Jul 26 18:15:22 2017 Arthur Josso
 */
 
 #include "opcode.h"
@@ -24,4 +24,5 @@ void		refresh_clock_dependent_regs(uint8_t last_opcode,
      elapsed_cycles = cycles_duration;
    refresh_screen_state(elapsed_cycles);
    refresh_timer_state(elapsed_cycles);
+   refresh_divider_state(elapsed_cycles);
 }
