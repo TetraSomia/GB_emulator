@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 17:55:47 2017 Arthur Josso
-** Last update Wed Jul 26 16:58:24 2017 Arthur Josso
+** Last update Wed Jul 26 17:06:27 2017 Arthur Josso
 */
 
 #include <sys/types.h>
@@ -18,11 +18,6 @@ bool		dump_file(const char *path)
   FILE		*file;
   struct stat	file_stat;
 
-  if (stat(path, &file_stat) != -1 && !S_ISREG(file_stat.st_mode))
-    {
-      fprintf(stderr, "%s: not a regular file\n", path);
-      return (false);
-    }
   file = fopen(path, "r");
   if (file == NULL)
     {
@@ -40,7 +35,7 @@ bool		dump_file(const char *path)
       fprintf(stderr, "%s: the ROM should be 32kB long\n", path);
       return (false);
     }
-  fseek(file, 0, SEEK_SET);
+  rewind(file);
   if (fread(mem->ROM, 1, sizeof(mem->ROM), file) != sizeof(mem->ROM))
     {
       fprintf(stderr, "ERROR: fread failed\n");
