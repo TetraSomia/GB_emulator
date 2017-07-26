@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:17:00 2017 Arthur Josso
-** Last update Wed Jul 26 17:37:05 2017 Arthur Josso
+** Last update Wed Jul 26 21:26:35 2017 Arthur Josso
 */
 
 #pragma once
@@ -33,6 +33,7 @@ typedef struct
 {
   uint32_t		clock;
   t_screen_state	state;
+  bool			changed_state;
   uint8_t		line;
 } t_screen;
 

@@ -1,7 +1,7 @@
 HALT inst
 interruptions (pin_transition && serial_io)
 RO and reset locations
-screen
+screen (colors dark->light rgb : 0f380f 306230 8bac0f 9bbc0f)
 frame limit
 inputs
 sound

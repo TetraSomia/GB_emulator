@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 00:59:04 2017 Arthur Josso
-** Last update Wed Jul 26 16:48:03 2017 Arthur Josso
+** Last update Wed Jul 26 21:28:55 2017 Arthur Josso
 */
 
 #include "interrupt.h"
@@ -15,11 +15,10 @@
 
 bool			interrupt_lcdc()
 {
-  static t_screen_state	old_scr_state = SCR_HBLANK;
   t_spereg_stat * const	stat = (void*)&mem->raw[REG_STAT];
   bool			is_int;
 
-  if (old_scr_state != screen.state &&
+  if (screen.changed_state &&
       GET_BIT(stat->interrupt, screen.state))
     is_int = true;
   else if (screen.line == mem->raw[REG_LYC] &&
@@ -27,6 +26,5 @@ bool			interrupt_lcdc()
     is_int = true;
   else
     is_int = false;
-  old_scr_state = screen.state;
   return (is_int);
 }

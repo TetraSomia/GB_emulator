@@ -5,14 +5,15 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:15:48 2017 Arthur Josso
-** Last update Wed Jul 26 17:37:29 2017 Arthur Josso
+** Last update Wed Jul 26 21:26:54 2017 Arthur Josso
 */
 
 #include "memory.h"
 #include "screen.h"
 #include "special_reg.h"
 
-t_screen	screen = {.clock = 0, .state = SCR_HBLANK};
+t_screen	screen = {.clock = 0, .state = SCR_HBLANK,
+			  .changed_state = false, .line = 0};
 
 static t_screen_state	define_screen_state(uint32_t clock)
 {
@@ -38,11 +39,14 @@ static t_screen_state	define_screen_state(uint32_t clock)
 void			refresh_screen_state(uint8_t elapsed_cycles)
 {
   t_spereg_stat * const	stat_reg = (void*)&mem->raw[REG_STAT];
+  t_screen_state	new_state;
 
   if (!GET_BIT(mem->raw[REG_LCDC], 7))
     return;
   screen.clock = (screen.clock + elapsed_cycles) % SCR_COMPLETE_REFRESH_DUR;
-  screen.state = define_screen_state(screen.clock);
+  new_state = define_screen_state(screen.clock);
+  screen.changed_state = screen.state == new_state ? false : true;
+  screen.state = new_state;
   screen.line = screen.clock / SCR_LINE_REFRESH_DUR;
   mem->raw[REG_LY] = screen.line;
   stat_reg->state = screen.state;
