@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:17:00 2017 Arthur Josso
-** Last update Tue Jul 25 02:04:21 2017 Arthur Josso
+** Last update Wed Jul 26 02:14:16 2017 Arthur Josso
 */
 
 #pragma once
@@ -25,6 +25,7 @@ typedef enum
     SCR_VBLANK,
     SCR_OAM_SEARCH,
     SCR_DATA_TRANSFER,
+    SCR_COINCIDENCE = SCR_DATA_TRANSFER,
     SCR_STATE_NBR
   } t_screen_state;
 

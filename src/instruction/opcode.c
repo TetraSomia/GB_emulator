@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar 11 19:43:47 2017 Arthur Josso
-** Last update Tue Jul 25 02:54:11 2017 Arthur Josso
+** Last update Wed Jul 26 04:15:54 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -281,7 +281,7 @@ static const t_instruction	inst_tab[] =
     {0xCA, 3, 0, {P_VAL_16, P_RAW(CONDITION_Z)}, inst_JP, "JP Z, nn"},
     {0xD2, 3, 0, {P_VAL_16, P_RAW(CONDITION_NC)}, inst_JP, "JP NC, nn"},
     {0xDA, 3, 0, {P_VAL_16, P_RAW(CONDITION_C)}, inst_JP, "JP C, nn"},
-    {0xE9, 1, 0, {P_IREG_8(HL), P_RAW(CONDITION_NONE)}, inst_JP, "JP (HL)"},
+    {0xE9, 1, 0, {P_REG_16(HL), P_RAW(CONDITION_NONE)}, inst_JP, "JP (HL)"},
 
     {0x18, 2, 2, {P_VAL_8, P_RAW(CONDITION_NONE)}, inst_JR, "JR n"},
     {0x20, 2, 2, {P_VAL_8, P_RAW(CONDITION_NZ)}, inst_JR, "JR NZ, n"},

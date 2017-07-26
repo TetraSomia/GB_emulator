@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 17:55:47 2017 Arthur Josso
-** Last update Tue Jul 25 02:47:25 2017 Arthur Josso
+** Last update Wed Jul 26 04:17:49 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -34,12 +34,14 @@ void		set_word(uint16_t addr, uint16_t value)
 {
   uint16_t	*ptr;
 
-  if (addr & 1)
-    emu_warn("set_word", "Address not aligned");
+  if (addr < 0x8000)
+    emu_warn("set_word", "Writing 2 bytes into ROM");
+  if (addr == 0xFFFF)
+    emu_warn("set_word", "Writing 2 bytes at 0xFFFF");
   ptr = (uint16_t*)(mem->raw + addr);
   *ptr = value;
   if (0xE000 <= addr && addr < 0xFE00)
-    *(ptr - 0x2000) = value;
+    *(ptr - 0x1000) = value;
   else if (0xC000 <= addr && addr < 0xDE00)
-    *(ptr + 0x2000) = value;
+    *(ptr + 0x1000) = value;
 }

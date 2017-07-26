@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Tue Jul 18 00:28:52 2017 Arthur Josso
-** Last update Tue Jul 25 03:19:04 2017 Arthur Josso
+** Last update Wed Jul 26 04:18:08 2017 Arthur Josso
 */
 
 #include <unistd.h>
@@ -45,9 +45,8 @@ bool			emu_run()
       check_for_interrupts(elapsed_cycles);
 
       //
-      if (act_inst->opcode != 0x18)
-	printf("%s\n", act_inst->desc);
-      //usleep(10);
+      printf("%s\n", act_inst->desc);
+      //usleep(100);
       //
     }
   return (true);
