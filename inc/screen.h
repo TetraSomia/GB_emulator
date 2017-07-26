@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:17:00 2017 Arthur Josso
-** Last update Wed Jul 26 02:14:16 2017 Arthur Josso
+** Last update Wed Jul 26 17:37:05 2017 Arthur Josso
 */
 
 #pragma once
@@ -14,9 +14,9 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#define SCR_COMPLETE_REFRESH_DUR	70224
-#define SCR_REFRESH_DUR_WITHOUT_VB	65664
-#define SCR_LINE_REFRESH_DUR		456
+#define SCR_COMPLETE_REFRESH_DUR	17556
+#define SCR_REFRESH_DUR_WITHOUT_VB	16416
+#define SCR_LINE_REFRESH_DUR		114
 #define SCR_NBR_LINES			144
 
 typedef enum

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:15:48 2017 Arthur Josso
-** Last update Tue Jul 25 03:19:51 2017 Arthur Josso
+** Last update Wed Jul 26 17:37:29 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -18,10 +18,10 @@ static t_screen_state	define_screen_state(uint32_t clock)
 {
   static const uint32_t	state_durations[SCR_STATE_NBR] =
     {
-      204,
-      4560,
-      80,
-      172
+      51,
+      1140,
+      20,
+      43
     };
 
   if (clock >= SCR_REFRESH_DUR_WITHOUT_VB)

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 **
 ** Started on  Tue Jul 25 00:05:05 2017 Arthur Josso
-** Last update Tue Jul 25 01:25:29 2017 Arthur Josso
+** Last update Wed Jul 26 17:25:17 2017 Arthur Josso
 */
 
 #pragma once
@@ -56,3 +56,9 @@ typedef struct
   uint8_t	none : 1;
 } t_spereg_stat;
 
+typedef struct
+{
+  uint8_t	freq : 2;
+  uint8_t	run : 1;
+  uint8_t	none : 5;
+} t_spereg_tac;
