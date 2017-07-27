@@ -5,15 +5,12 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:15:48 2017 Arthur Josso
-** Last update Wed Jul 26 21:26:54 2017 Arthur Josso
+** Last update Fri Jul 28 00:36:15 2017 Arthur Josso
 */
 
 #include "memory.h"
 #include "screen.h"
 #include "special_reg.h"
-
-t_screen	screen = {.clock = 0, .state = SCR_HBLANK,
-			  .changed_state = false, .line = 0};
 
 static t_screen_state	define_screen_state(uint32_t clock)
 {

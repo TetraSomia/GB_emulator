@@ -5,13 +5,14 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sat Mar  4 13:34:04 2017 Arthur Josso
-** Last update Tue Jul 18 01:30:04 2017 Arthur Josso
+** Last update Fri Jul 28 00:43:38 2017 Arthur Josso
 */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <signal.h>
 #include "core.h"
+#include "screen.h"
 
 static void	sig_handler(int sig)
 {
@@ -36,6 +37,8 @@ int	main(int ac, char **av)
   signal(SIGINT, &sig_handler);
   init_memory();
   if (dump_file(av[1]) == false)
+    return (1);
+  if (screen_init() == false)
     return (1);
   emu_run();
   return (0);

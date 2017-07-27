@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Wed Jul 26 16:57:52 2017 Arthur Josso
+## Last update Fri Jul 28 01:00:03 2017 Arthur Josso
 ##
 
 CC	=	gcc
@@ -14,9 +14,12 @@ NAME	=	GB_emulator
 
 INC	=	./inc/
 
-CFLAGS	+=	-I$(INC) -Wall -W -Wextra -g
+CFLAGS	+=	-I$(INC) -Wall -W -Wextra	\
+		`sdl-config --cflags`
 
-LDFLAGS	+=
+LDFLAGS	+=	`sdl-config --libs`
+
+DEV_FLAG =	-g
 
 S_ROOT	=	./src/
 
@@ -31,6 +34,8 @@ S_INT	=	$(S_ROOT)interrupt/
 S_SCR	=	$(S_ROOT)screen/
 
 S_MEM	=	$(S_ROOT)memory/
+
+S_INPUT	=	$(S_ROOT)input/
 
 SRC	=	$(S_ROOT)main.c 	\
 		$(S_ROOT)misc.c 	\
@@ -56,11 +61,18 @@ SRC	=	$(S_ROOT)main.c 	\
 		$(S_INT)timer.c		\
 		$(S_INT)serial_io.c	\
 		$(S_INT)pin_trans.c	\
-		$(S_SCR)refresh.c
+		$(S_SCR)init.c		\
+		$(S_SCR)refresh.c	\
+		$(S_SCR)blit.c		\
+		$(S_INPUT)keys.c
 
 OBJ	=	$(SRC:.c=.o)
 
 RM	=	rm -f
+
+%.o:		%.c
+		@echo [Compiling]: $<
+		@$(CC) $(DEV_FLAG) $(CFLAGS) -o $@ -c $<
 
 all:		$(NAME)
 

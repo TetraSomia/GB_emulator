@@ -5,19 +5,23 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:17:00 2017 Arthur Josso
-** Last update Wed Jul 26 21:26:35 2017 Arthur Josso
+** Last update Fri Jul 28 00:54:13 2017 Arthur Josso
 */
 
 #pragma once
 
+#include <SDL.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
 
+#define SCREEN_SIZE_X			160
+#define SCREEN_SIZE_Y			144
+
 #define SCR_COMPLETE_REFRESH_DUR	17556
 #define SCR_REFRESH_DUR_WITHOUT_VB	16416
 #define SCR_LINE_REFRESH_DUR		114
-#define SCR_NBR_LINES			144
+#define SCR_NBR_LINES			SCREEN_SIZE_Y
 
 typedef enum
   {
@@ -31,6 +35,8 @@ typedef enum
 
 typedef struct
 {
+  SDL_Surface		*surface;
+  uint32_t		*pixels;
   uint32_t		clock;
   t_screen_state	state;
   bool			changed_state;
@@ -38,5 +44,8 @@ typedef struct
 } t_screen;
 
 extern t_screen	screen;
+
+bool screen_init();
+void screen_blit();
 
 void refresh_screen_state(uint8_t elapsed_cycles);

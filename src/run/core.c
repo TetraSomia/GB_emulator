@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Tue Jul 18 00:28:52 2017 Arthur Josso
-** Last update Wed Jul 26 18:43:00 2017 Arthur Josso
+** Last update Fri Jul 28 01:02:35 2017 Arthur Josso
 */
 
 #include <unistd.h>
@@ -14,6 +14,7 @@
 #include "misc.h"
 #include "interrupt.h"
 #include "screen.h"
+#include "input.h"
 
 //
 #include <stdio.h>
@@ -35,7 +36,7 @@ bool			emu_run()
 
       //
       printf("%s (PC=%x)\n", act_inst->desc, reg.PC);
-      //usleep(10000);
+      //usleep(1000000);
       //
 
       act_inst->func((t_parameter*)act_inst->param);
@@ -43,6 +44,13 @@ bool			emu_run()
 
       refresh_clock_dependent_regs(act_inst->opcode, act_inst->nb_cycles);
       check_for_interrupts();
+
+      check_for_inputs();
+
+      //
+      memset(screen.pixels, rand(), SCREEN_SIZE_X * SCREEN_SIZE_Y * 4);
+      screen_blit();
+      //
     }
   return (true);
 }
