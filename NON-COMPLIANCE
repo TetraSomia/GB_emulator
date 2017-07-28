@@ -1,5 +1,6 @@
 DANGEROUS :
 
+- (see TODO list)
 - ...
 
 SHOULD NOT BE A PROBLEM :
@@ -8,6 +9,7 @@ SHOULD NOT BE A PROBLEM :
 - DAA instruction not perfect
 - EI and DI instructions take effect immediately (instead of after their execution)
 - HALT instruction is not bugged when DI, then : no opcode dupliaction
+- background drawn each frame, not on each line
 
 MAN ERROR ? :
 

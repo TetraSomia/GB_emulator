@@ -5,7 +5,7 @@
 ## Login   <arthur.josso@epitech.eu>
 ## 
 ## Started on  Sat Mar  4 13:32:29 2017 Arthur Josso
-## Last update Fri Jul 28 01:00:03 2017 Arthur Josso
+## Last update Fri Jul 28 19:01:33 2017 Arthur Josso
 ##
 
 CC	=	gcc
@@ -64,6 +64,8 @@ SRC	=	$(S_ROOT)main.c 	\
 		$(S_SCR)init.c		\
 		$(S_SCR)refresh.c	\
 		$(S_SCR)blit.c		\
+		$(S_SCR)draw_line.c	\
+		$(S_SCR)draw_bg.c	\
 		$(S_INPUT)keys.c
 
 OBJ	=	$(SRC:.c=.o)

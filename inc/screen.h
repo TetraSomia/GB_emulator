@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:17:00 2017 Arthur Josso
-** Last update Fri Jul 28 00:54:13 2017 Arthur Josso
+** Last update Fri Jul 28 19:02:56 2017 Arthur Josso
 */
 
 #pragma once
@@ -45,7 +45,20 @@ typedef struct
 
 extern t_screen	screen;
 
+/*
+** GPU
+*/
+
 bool screen_init();
 void screen_blit();
+
+void screen_check_for_update();
+
+void screen_draw_background();
+void screen_draw_line(uint8_t line);
+
+/*
+** CPU
+*/
 
 void refresh_screen_state(uint8_t elapsed_cycles);

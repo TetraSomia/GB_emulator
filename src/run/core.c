@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Tue Jul 18 00:28:52 2017 Arthur Josso
-** Last update Fri Jul 28 01:02:35 2017 Arthur Josso
+** Last update Fri Jul 28 19:03:56 2017 Arthur Josso
 */
 
 #include <unistd.h>
@@ -43,14 +43,12 @@ bool			emu_run()
       reg.PC += act_inst->byte_size;
 
       refresh_clock_dependent_regs(act_inst->opcode, act_inst->nb_cycles);
+
       check_for_interrupts();
 
       check_for_inputs();
 
-      //
-      memset(screen.pixels, rand(), SCREEN_SIZE_X * SCREEN_SIZE_Y * 4);
-      screen_blit();
-      //
+      screen_check_for_update();
     }
   return (true);
 }
