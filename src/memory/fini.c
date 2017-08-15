@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Sun Mar  5 17:55:47 2017 Arthur Josso
-** Last update Fri Jul 28 00:53:02 2017 Arthur Josso
+** Last update Wed Aug 16 01:14:23 2017 Arthur Josso
 */
 
 #include <stdlib.h>
@@ -15,8 +15,10 @@
 
 void		free_memory()
 {
-  if (screen.pixels)
-    free(screen.pixels);
+  if (screen.pix_scr.array)
+    free(screen.pix_scr.array);
+  if (screen.pix_bg.array)
+    free(screen.pix_bg.array);
   SDL_Quit();
   if (mem)
     free(mem);

@@ -5,7 +5,7 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Mon Jul 24 23:15:48 2017 Arthur Josso
-** Last update Fri Jul 28 19:00:41 2017 Arthur Josso
+** Last update Fri Jul 28 19:19:13 2017 Arthur Josso
 */
 
 #include "memory.h"
@@ -52,13 +52,14 @@ void			refresh_screen_state(uint8_t elapsed_cycles)
 
 void    screen_check_for_update()
 {
-  if (!screen.changed_state)
+  if (!GET_BIT(mem->raw[REG_LCDC], 7) || !screen.changed_state)
     return;
   if (screen.state == SCR_DATA_TRANSFER && screen.line < SCR_NBR_LINES)
     screen_draw_line(screen.line);
   else if (screen.state == SCR_HBLANK && screen.line == 0)
     {
       screen_blit();
-      screen_draw_background();
+      if (GET_BIT(mem->raw[REG_LCDC], 0))
+	screen_draw_background();
     }
 }
