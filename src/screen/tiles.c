@@ -5,12 +5,14 @@
 ** Login   <arthur.josso@epitech.eu>
 ** 
 ** Started on  Fri Jul 28 19:07:57 2017 Arthur Josso
-** Last update Fri Jul 28 19:14:10 2017 Arthur Josso
+** Last update Wed Aug 16 01:26:13 2017 Arthur Josso
 */
 
 #include "screen.h"
 
-void	screen_draw_tile(uint8_t id, t_pos pos)
+void	screen_draw_tile(t_pix_array *pix_array, t_tile *tile, t_pos pos)
 {
-  
+  (void)pix_array;
+  (void)tile;
+  (void)pos;
 }
